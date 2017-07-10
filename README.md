@@ -31,7 +31,7 @@
 	
 	
 ## Naming Conventions
-- File and Folder names are given fully lowercase characters seperated by underscore.
+- File and Folder names are given fully lowercase characters seperated by underscore (except class files, they are named same as class names).
 - Variable and object names follow camelCase conventions.
 - Class names have first letter capital and each first character of the remaining words capital.
 - Class methods and other functions follow camelCase conventions.
