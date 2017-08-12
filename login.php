@@ -5,5 +5,5 @@
         PageRedirect('index');
     }*/
 
-    include $rootpath.'templates/c_template_register.php';
+    include $rootpath.'templates/c_template_login.php';
 ?>

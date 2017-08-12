@@ -61,7 +61,7 @@ and open the template in the editor.
                                     <input type="text" class="form-control form-horizontal" id="year" placeholder="Year of Graduation*"></br>
                                     <input type="text" class="form-control form-horizontal" id="contact" placeholder="Contact Number*"></br>
                                     <input type="text" class="form-control form-horizontal" id="email" placeholder="Email Address*"></br>
-                                    <input type="password" class="form-control form-horizontal" id="passwd" placeholder="Password(8-15 characters)*"></br>
+                                    <input type="password" class="form-control form-horizontal" id="passwd" placeholder="Password(8-15 chars)*"></br>
                                     <input type="password" class="form-control form-horizontal" id="conf_passwd" placeholder="Confirm Password*"><br>
                                 </form>
                             </div>
