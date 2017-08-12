@@ -6,4 +6,5 @@
 
 	include_once 'constants.php';
 	$rootpath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
+	$dbName = $db->name();
 ?>

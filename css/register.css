@@ -1,7 +1,7 @@
 body {
     margin: 0;
     color: #6a6f8c;
-    background: url(../res/images/register/background.jpg) no-repeat;
+    background: url("../res/images/register/background.jpg") no-repeat;
     background-size: cover;
     position: absolute;
     width: 100%;
@@ -98,8 +98,8 @@ body {
     font-weight: bold;
 }
 
-.reg-html .sign-in-htm,
-.reg-html .sign-up-htm {
+.reg-html .reg-college,
+.reg-html .reg-alumni {
     top: 0;
     left: 0;
     right: 0;
@@ -145,12 +145,12 @@ body {
     transform-style: preserve-3d;
 }
 
-.reg-form .fromgroup {
+.fromgroup {
     margin-bottom: 15px;
 }
 
-.reg-form .formgroup .input,
-.reg-form .fromgroup .btn {
+.formgroup .input,
+.fromgroup .btn {
     width: 100%;
     color: #fff;
     display: block;
@@ -160,12 +160,12 @@ body {
     background: rgb(191, 191, 191);
 }
 
-.reg-form .formgroup input [type='text'],
+.formgroup input [type='text'],
 input [type='password'] {
     -webkit-text-security: circle;
 }
 
-.reg-form .formgroup .label {
+.formgroup .label {
     color: #aaa;
     font-size: 12px;
     font-weight: bold;
@@ -174,16 +174,16 @@ input [type='password'] {
     display: block;
 }
 
-.reg-form .formgroup .btn {
+.formgroup .btn {
     background: #1161ee;
 }
 
-.reg-html .sign-in:checked+.tab+.sign-up+.tab+.reg-form .sign-in-htm {
+.reg-html .sign-in:checked+.tab+.sign-up+.tab+.reg-form .reg-college {
     -webkit-transform: rotate(0);
     transform: rotate(0);
 }
 
-.reg-html .sign-up:checked+.tab+.reg-form .sign-up-htm {
+.reg-html .sign-up:checked+.tab+.reg-form .reg-alumni {
     -webkit-transform: rotate(0);
     transform: rotate(0);
 }
