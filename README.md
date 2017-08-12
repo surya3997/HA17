@@ -49,4 +49,12 @@ Place this folder in htdocs in xampp installation folder.
 Create a stable and secure Registration and Login page.
 
 ### On cart
-To be decided after discussion with the team.
+shift cipher (level 1)
+password in view source
+html editting to send email
+sql injection
+php and linux shell combined level
+cookie level
+play fair cipher
+
+botwars file upload page - 4
