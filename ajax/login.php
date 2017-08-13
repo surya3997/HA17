@@ -1,6 +1,6 @@
 <?php
     include '../includes/config.php';
-
+    /* Dconsole("Surya"); */
     $jsonMessage = array();
 
     if($session->isLoggedIn()) {

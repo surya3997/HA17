@@ -39,7 +39,7 @@ and open the template in the editor.
                                     <input type="password" class="form-control form-horizontal" id="c_conf_passwd" placeholder="Confirm Password*"><br>
                                 </form>
                             </div>
-                            <button style="width: 90%;" type="submit" form="collegeForm" id="reg_col_btn" class="btn btn-lg btn-primary btn-block">Join us</button>
+                            <button id="reg_col_btn" class="btn btn-lg btn-primary btn-block">Join us</button>
                         </div>
 
                         <div class="reg-alumni">
@@ -62,7 +62,7 @@ and open the template in the editor.
                                     <input type="password" class="form-control form-horizontal" id="a_conf_passwd" placeholder="Confirm Password*"><br>
                                 </form>
                             </div>
-                            <button id="reg_alu_btn" type="submit" form="alumniForm" style="width: 90%;" class="btn btn-lg btn-primary btn-block">Join us</button>
+                            <button id="reg_alu_btn" class="btn btn-lg btn-primary btn-block">Join us</button>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,6 @@ and open the template in the editor.
         </div>
     </div>
 
-    <script type="text/javascript" src="./js/enums.js"></script>
     <script type="text/javascript" src="./js/register.js"></script>
 </body>
 

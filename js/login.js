@@ -23,11 +23,11 @@ $(document).ready(function() {
             var jsonResult = JSON.parse(response);
             if (jsonResult.status == 'Ok') {
                 /* change this */
-                console.log("Logged in...");
+                alert("Logged in...");
                 window.location = 'index.php';
             } else {
                 /* change this */
-                console.log("Not logged in...");
+                alert("Not logged in...");
                 $('#loginForm :input[name=email]').val('');
                 $('#loginForm :input[name=password]').val('');
             }

@@ -64,7 +64,7 @@ class Session {
                     } else {
                         //This means that the session is valid. Update the time and let him pass.
                         $db->freeResults($query);
-                        $sql = "UPDATE ".DBT_SESSION." SET `!last_active` = '{$currentTime}' WHERE `id` = '{$sessionId}'";
+                        $sql = "UPDATE ".DBT_SESSION." SET `last_active` = '{$currentTime}' WHERE `id` = '{$sessionId}'";
                         if ( ! $db->query($sql) )   {
                             $db->freeResults($query);
                             die('Session Update Failed. Contact Admin.');
@@ -164,7 +164,7 @@ class Session {
 		//This is used to logout a user.
 		global $db;
 		
-		//First lets get the session id
+		//First lets get the session id 
 		$sesId = $_SESSION['id'];
 		$currentTime = time();
 		//Now unset it from the db.
