@@ -1,5 +1,5 @@
 <?php
-	
+	$dbName = $db->name();
 	$db_prefix = 'ha_';	//This should be changed when hosted.
 	/* Define all table names as constants */
 	define('DBT_USER'				, "`{$dbName}`.`{$db_prefix}user`");

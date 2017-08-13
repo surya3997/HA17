@@ -6,5 +6,5 @@
     } 
 
     /* change this */
-    include $rootpath.'templates/c_template_login.php';
+    include $rootpath.'templates/c_template_resend.php';
 ?>

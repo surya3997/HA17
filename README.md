@@ -43,18 +43,18 @@ Place this folder in htdocs in xampp installation folder.
 
 ## Todo
 ### Completed
-!!!---!!!
+Create a stable and secure Registration and Login page.
 
 ### On progress
-Create a stable and secure Registration and Login page.
+Create base template (mobile UI)
 
 ### On cart
 shift cipher (level 1)
-password in view source
-html editting to send email
-sql injection
-php and linux shell combined level
-cookie level
-play fair cipher
+password in view source (level 2)
+html editting to send email (level 3)
+sql injection (level 4)
+php and linux shell combined level (level 5)
+cookie level (level 6)
+play fair cipher (level 7)
 
 botwars file upload page - 4

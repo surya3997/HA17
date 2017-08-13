@@ -6,23 +6,27 @@
     // toastr.clear();
     if (jQuery.trim(fieldValue) == '') {
         // toastr.error(fieldName + ' is empty. Please fill that field.', 'Empty Field');
+        console.log(fieldName + ' is empty. Please fill that field.', 'Empty Field');
         return false;
     }
     if (fieldPattern != '') {
         var matches = fieldValue.match(fieldPattern);
         if (matches == null) {
             // toastr.error(fieldName + ' does not conform to the given pattern.', 'Invalid Field');
+            console.log(fieldName + ' does not conform to the given pattern.', 'Invalid Field');
             return false;
         }
         matches = matches[0];
         if (matches != fieldValue) {
             // toastr.error(fieldName + ' does not conform to the given pattern.', 'Invalid Field');
+            console.log(fieldName + ' does not conform to the given pattern.', 'Invalid Field');
             return false;
         }
     }
     return true;
 } */
 
+/* change this */
 function CheckEmptyFields(a, b, c) {
     return true;
 }
@@ -51,13 +55,14 @@ document.getElementById("reg_col_btn").onclick = function() {
     var passwordCnf = $('#c_conf_passwd').val();
     if (password != passwordCnf) {
         // toastr.error('Passwords dont match. Check again.', 'Password Mismatch');
+        console.log('Passwords dont match. Check again.', 'Password Mismatch');
         return false;
     }
 
     alert(collegeCode, firstName, lastName, contact, email, password, passwordCnf);
 
     //AJAX Confirm
-    /* PlaySplashScreen();
+    /* PlaySplashScreen(); */
     $.post('ajax/register.php', {
         type: 'College',
         collegeCode: collegeCode,
@@ -68,16 +73,18 @@ document.getElementById("reg_col_btn").onclick = function() {
         contact: contact
     }, function(data) {
         var jsonData = JSON.parse(data);
-        HideSplashScreen();
+        //HideSplashScreen();
         if (jsonData.status == EnumStatus.OK) {
             // toastr.info('Email Verification required. Please check your mail (also SPAM folders) for activation link.', 'Registration Successful');
+            console.log('Email Verification required. Please check your mail (also SPAM folders) for activation link.', 'Registration Successful');
             setTimeout(function() {
                 window.location = 'login.php';
             }, 3000);
         } else {
             // toastr.error(jsonData.message, 'Registration Error');
+            console.log(jsonData.message, 'Registration Error');
         }
-    }); */
+    });
     return false;
 }
 
