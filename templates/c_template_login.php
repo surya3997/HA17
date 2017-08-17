@@ -25,12 +25,12 @@ and open the template in the editor.
                         <center>
                             <h1 style="color:white">WELCOME</h1>
                         </center><br>
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id="formLogin">
                             <input type="text" class="form-control form-rounded transparent-input" id="email" placeholder="Email Address"><br>
                             <input type="password" class="form-control form-rounded transparent-input" id="passwd" placeholder="Password"><br>
                         </form>
                         <div class="game_btn">
-                            <button id="login_btn" class="btn btn-lg btn-primary btn-block">Game on</button>
+                            <button id="login_btn" form="formLogin" class="btn btn-lg btn-primary btn-block">Game on</button>
                         </div>
                         <br>
                         <br>

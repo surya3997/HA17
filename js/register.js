@@ -31,7 +31,7 @@ function CheckEmptyFields(a, b, c) {
     return true;
 }
 
-document.getElementById("reg_col_btn").onclick = function() {
+document.getElementById("collegeForm").onsubmit = function() {
     var collegeCode = $('#col_code').val();
 
     if (!CheckEmptyFields(collegeCode, '[a-zA-Z0-9]{8,8}', 'College Code')) {
@@ -91,7 +91,7 @@ document.getElementById("reg_col_btn").onclick = function() {
 /**
  * Validate and submit the form using AJAX. [Alumni]
  */
-document.getElementById('reg_alu_btn').onclick = function() {
+document.getElementById('alumniForm').onclick = function() {
     var alumniCode = $('#alu_code').val();
     if (!CheckEmptyFields(alumniCode, '[a-zA-Z0-9]{8,8}', 'Alumni Code')) {
         return false;

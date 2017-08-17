@@ -15,7 +15,7 @@ if (IsMobileBrowser()) {
 
 $(document).ready(function() {
 
-    document.getElementById('login_btn').onclick = function() {
+    document.getElementById('formLogin').onsubmit = function() {
         var username = $('#email').val();
         var password = $('#passwd').val();
 
