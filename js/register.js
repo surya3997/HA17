@@ -59,8 +59,6 @@ document.getElementById("collegeForm").onsubmit = function() {
         return false;
     }
 
-    alert(collegeCode, firstName, lastName, contact, email, password, passwordCnf);
-
     //AJAX Confirm
     /* PlaySplashScreen(); */
     $.post('ajax/register.php', {
@@ -91,7 +89,7 @@ document.getElementById("collegeForm").onsubmit = function() {
 /**
  * Validate and submit the form using AJAX. [Alumni]
  */
-document.getElementById('alumniForm').onclick = function() {
+document.getElementById('alumniForm').onsubmit = function() {
     var alumniCode = $('#alu_code').val();
     if (!CheckEmptyFields(alumniCode, '[a-zA-Z0-9]{8,8}', 'Alumni Code')) {
         return false;
@@ -122,10 +120,10 @@ document.getElementById('alumniForm').onclick = function() {
         return false;
     }
 
-    alert(alumniCode, firstName, lastName, course, contact, yearGrad, email, password, passwordCnf);
+    console.log(alumniCode, firstName, lastName, course, contact, yearGrad, email, password, passwordCnf);
 
     //AJAX Confirm
-    /* PlaySplashScreen();
+    /* PlaySplashScreen(); */
     $.post('ajax/register.php', {
         type: 'Alumni',
         alumniCode: alumniCode,
@@ -137,14 +135,15 @@ document.getElementById('alumniForm').onclick = function() {
         yearJoin: yearGrad,
         contact: contact
     }, function(data) {
-        HideSplashScreen();
+        // HideSplashScreen();
         var jsonData = JSON.parse(data);
         if (jsonData.status == EnumStatus.OK) {
             // toastr.info('Email Verification required. Please check your mail (also SPAM folders) for activation link.<br /> <button onclick="window.location=\'login.php\';"> Close </button>', 'Registration Successful');
-
+            alert('Email Verification required. Please check your mail', 'Registration Successful');
         } else {
             // toastr.error(jsonData.message, 'Registration Error');
+            alert('Registration Error');
         }
-    }); */
+    });
     return false;
 }

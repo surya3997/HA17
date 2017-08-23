@@ -22,9 +22,26 @@
 	//This is for sending mail and stuff. 
 	include_once 'emailSender.php';
 
+	//This is for handling data related to the level. 
+	include_once 'LevelCompletionManager.php';
+
+	//Now we include the template.
+	include_once 'template.php';
+	
+	//This is for the levels
+	include_once 'levelmanager.php';
+
 	$rootpath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
 
 	$session = new Session();
-		
 
+	//We invoke the user class 
+	include_once 'user.php';
+
+	$user = new User(); 
+	$levelMgr = new LevelManager();
+	$template = new Template();
+	
+	//This is for handling data related to the level. 
+	include_once 'LevelDataManager.php';
 ?>

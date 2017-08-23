@@ -45,6 +45,9 @@ and open the template in the editor.
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="js/general/jquery.js"></script>
+    <script type="text/javascript" src="js/general/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/ha_resend.js"></script>
 </body>
 
 </html>

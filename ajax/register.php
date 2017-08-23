@@ -15,7 +15,8 @@
                     FROM '.DBT_COLLEGE_CODE.'
                     WHERE `code` = \''.$collegeCode.'\'';
         $query = $db->query($sql);
-        if($db->numRows($query) != 0) {
+        
+        if($db->numRows($query) == 0) {
             //This is invalid
             $jsonMessage['status'] = ENUM_STATUS_FAILED;
             $jsonMessage['message'] = 'Invalid College Code';
@@ -27,7 +28,7 @@
     } else {
         $alumniCode = clean($_POST['alumniCode']);
         /* change this */
-        if('log16alu' != strtolower($alumniCode)) {
+        if('log17alu' != strtolower($alumniCode)) {
             $jsonMessage['status'] = ENUM_STATUS_FAILED;
             $jsonMessage['message'] = 'Invalid Alumni Code';
             die(json_encode($jsonMessage));
@@ -36,7 +37,7 @@
         $course = clean($_POST['course']);
         $type = '1';
     }
-
+    
     //Proceed with the registration
     $firstName = clean($_POST['firstName']);
     $lastName = clean($_POST['lastName']);
@@ -73,7 +74,7 @@
 
     //Send the activation mail to the user.
     $activationCodeSafe = urlencode($activationLink);
-    $activationMailBody = "Hi {$firstName},<br />Thank you for Registering for Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"http://hackaventure.psgtechlogin.in/ha/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
+    $activationMailBody = "Hi {$firstName},<br />Thank you for Registering for Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
     $activationMailSender = new EmailSender($email, $activationMailBody);
     $activationMailSender->SendMail();
 
