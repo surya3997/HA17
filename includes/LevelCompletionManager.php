@@ -17,6 +17,50 @@ class LevelCompletionManager {
                 VALUES '."('{$userId}', '1', '0')";
         $db->query($sql);
 
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '2', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '3', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '4', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '5', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '6', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '7', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '8', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '9', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '10', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '11', '1')";
+        $db->query($sql);
+
+        $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
+                VALUES '."('{$userId}', '12', '1')";
+        $db->query($sql);
+
         /* change this */
         /* //Insert the flash light. 
         $sql = 'INSERT INTO '.DBT_USER_ITEMS.'(`item_id`, `user_id`, `added_timestamp`)
