@@ -40,7 +40,6 @@ class LevelManager {
      * Method to get the score of the current user.
      */
      public function GetUserScore() {
-        
         global $db, $user;
         $userId = $user->getUserId();
 

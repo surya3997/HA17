@@ -1,0 +1,211 @@
+#notifier {
+    color: white;
+}
+
+#timer {
+    margin-top: auto;
+    text-align: center;
+}
+
+#img1 {
+    height: 12%;
+    width: 7%;
+    bottom: 2%;
+    left: 5%;
+    position: absolute;
+}
+
+#img2 {
+    height: 12%;
+    width: 7%;
+    bottom: 2%;
+    left: 25%;
+    position: absolute;
+}
+
+#img3 {
+    height: 12%;
+    width: 7%;
+    bottom: 2%;
+    left: 50%;
+    position: absolute;
+}
+
+#img4 {
+    height: 12%;
+    width: 7%;
+    bottom: 2%;
+    left: 80%;
+    position: absolute;
+}
+
+.wrap {
+    position: absolute;
+    overflow: hidden;
+    top: 10%;
+    right: 15%;
+    left: 15%;
+    display: block;
+    border-radius: 4px;
+    transform: translateY(20px);
+    transition: all 0.5s;
+    visibility: hidden;
+}
+
+.button_justify {
+    width: 32.5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    background-color: black;
+    border: none;
+    outline: none;
+}
+
+#bottom_nav_bar .glyphicon {
+    color: white;
+    height: 100px;
+}
+
+#bottom_nav_bar .fa {
+    color: white;
+    margin-top: auto;
+    font-size: 25px;
+}
+
+#bottom_nav_bar .fa-play {
+    color: white;
+    margin-top: auto;
+    font-size: 25px;
+    transform: rotate(180deg);
+}
+
+#bottom_nav_bar .btn {
+    border: none;
+    outline: none;
+}
+
+#chat {
+    width: 100%;
+    height: 470px;
+    z-index: 1000;
+    opacity: 2;
+    display: none;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 470px;
+    z-index: 1000;
+    opacity: 2;
+    display: none;
+}
+
+#phone_div {
+    width: 100%;
+    height: 470px;
+    z-index: 10;
+    opacity: 1;
+    position: relative;
+    background: url(../res/images/hackHome.jpg);
+    background-size: 100% 100%;
+}
+
+#bottom_nav_bar {
+    bottom: 0%;
+    width: 100%;
+    height: 60px;
+    color: black;
+    background-color: black;
+}
+
+#notifier {
+    top: 0%;
+    width: 100%;
+    height: 30px;
+    background-color: black;
+}
+
+.wrap .content {
+    opacity: 0;
+}
+
+.wrap:before {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    content: "";
+    bottom: 10px;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.wrap.active {
+    display: block;
+    visibility: visible;
+    box-shadow: 2px 3px 16px silver;
+    transition: all 600ms;
+    transform: translateY(0px);
+    transition: all 0.5s;
+}
+
+.charthide {
+    opacity: 0;
+    width: 0%;
+    height: 0%;
+}
+
+.wrap.active:before {
+    height: 2000px;
+    width: 2000px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-left: -1000px;
+    margin-top: -1000px;
+    display: block;
+    -webkit-transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    transition: all 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.wrap.active .content {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transition: all 600ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+i.button {
+    padding: 11px 11px 13px 13px;
+    outline: none;
+    border-radius: 50%;
+    background: #007fed;
+    color: #fff;
+    font-size: 24px;
+    display: block;
+    position: fixed;
+    left: 5%;
+    bottom: 20px;
+    top: auto;
+    margin-left: -25px;
+    transition: transform 0.25s;
+}
+
+i.button:hover {
+    text-decoration: none;
+    background: #2198ff;
+}
+
+i.button.active {
+    transform: rotate(135deg);
+    transition: transform 0.5s;
+}
+
+#pop_mobile {
+    size: 20px;
+    padding: 11px 15px 11px 15px;
+}

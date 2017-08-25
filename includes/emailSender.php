@@ -55,13 +55,13 @@ class EmailSender {
         $mail->Password = "HackMeIfYouCan";
 
         //Set who the message is to be sent from
-        $mail->setFrom('hackaventure2k17@gmail.com', 'Hack-a-Venture - Admin');
+        $mail->setFrom('hackaventure2k17@gmail.com', 'PSG Login 2017 HA - Admin');
 
         //Set who the message is to be sent to
         $mail->addAddress($email);
 
         //Set the subject line
-        $mail->Subject = 'Hack-a-Venture Authentication.';
+        $mail->Subject = 'Login 2017 HA Authentication.';
 
         //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
         $mail->msgHTML('<html><body>'.$this->mMailBody.'</body></html>');

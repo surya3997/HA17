@@ -25,12 +25,12 @@ and open the template in the editor.
                         <center>
                             <h1 style="color:white">Resend Activation</h1>
                         </center><br>
-                        <form class="form-horizontal">
-                            <input type="text" class="form-control form-rounded transparent-input" id="name" placeholder="Email Address*"><br>
-                            <input type="password" class="form-control form-rounded transparent-input" id="name" placeholder="College/Alumni Code*"><br>
+                        <form class="form-horizontal" id="resend_form">
+                            <input type="text" class="form-control form-rounded transparent-input" id="activ_name" placeholder="Email Address*"><br>
+                            <input type="password" class="form-control form-rounded transparent-input" id="activ_code" placeholder="College/Alumni Code*"><br>
                         </form>
                         <div class="game_btn">
-                            <a href="" class="btn btn-lg btn-primary btn-block">Resend Activation</a>
+                            <button id="send_mail_btn" form="resend_form" class="btn btn-lg btn-primary btn-block">Resend Email</button>
                         </div>
                         <br>
                         <br>

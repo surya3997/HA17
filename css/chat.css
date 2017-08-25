@@ -1,0 +1,270 @@
+.chat_box,
+.msg_box {
+    cursor: pointer;
+    position: fixed;
+    bottom: 62px;
+    right: 0px;
+    background: white;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_head,
+.msg_head {
+    background: #f39c12;
+    padding: 15px;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_body {
+    height: 425px;
+}
+
+.narration_page {
+    width: 956px;
+    height: 425px;
+    background: #f39c12;
+}
+
+.msg_head {
+    background: #3498db;
+}
+
+.msg_body {
+    height: 350px;
+    font-size: 12px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.msg_box {
+    background: white;
+    bottom: 62px;
+    right: 0px
+}
+
+.chat_head,
+.msg_head {
+    background: #f39c12;
+    padding: 15px;
+    align: center;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_body {
+    height: 425px;
+}
+
+.msg_input {
+    border: transparent;
+    border-top: 1px solid #bdc3c7;
+    width: 100%;
+    height: 70px;
+    padding: 2px;
+    -webkit-box-sizing: border_box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.user {
+    cursor: pointer;
+    padding: 20px 25px;
+    position: relative;
+}
+
+.user:hover {
+    background: #f8f8f8;
+}
+
+.user:before {
+    content: "";
+    position: absolute;
+    background: #2ecc71;
+    width: 10px;
+    height: 10px;
+    left: 8px;
+    top: 24px;
+    border-radius: 5px;
+}
+
+.msg_a {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    min-height: 15px;
+    padding: 15px;
+    background: #99FFCC;
+    position: relative;
+    border-radius: 5px;
+}
+
+.msg_a:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 7px;
+    left: -29px;
+    border: 15px solid;
+    border-color: transparent #99FFCC transparent transparent;
+}
+
+.msg_b {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    min-height: 15px;
+    padding: 15px;
+    background: #FFFF99;
+    position: relative;
+    border-radius: 5px;
+}
+
+.msg_b:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 7px;
+    right: -29px;
+    border: 15px solid;
+    border-color: transparent transparent transparent #FFFF99;
+}
+
+.chat_box1,
+.msg_box1 {
+    cursor: pointer;
+    position: fixed;
+    bottom: 62px;
+    right: 0px;
+    background: white;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_head1,
+.msg_head1 {
+    background: #f39c12;
+    padding: 15px;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_body1 {
+    height: 425px;
+}
+
+.narration_page1 {
+    width: 956px;
+    height: 425px;
+    background: #f39c12;
+}
+
+.msg_head1 {
+    background: #3498db;
+}
+
+.msg_body1 {
+    height: 350px;
+    font-size: 12px;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.msg_box1 {
+    background: white;
+    bottom: 62px;
+    right: 0px
+}
+
+.chat_head1,
+.msg_head1 {
+    background: #f39c12;
+    padding: 15px;
+    align: center;
+    color: white;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.chat_body1 {
+    height: 425px;
+}
+
+.msg_input1 {
+    border: transparent;
+    border-top: 1px solid #bdc3c7;
+    width: 100%;
+    height: 50px;
+    padding: 2px;
+    -webkit-box-sizing: border_box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.user1 {
+    cursor: pointer;
+    padding: 20px 25px;
+    position: relative;
+}
+
+.user1:hover {
+    background: #f8f8f8;
+}
+
+.user1:before {
+    content: "";
+    position: absolute;
+    background: #2ecc71;
+    width: 10px;
+    height: 10px;
+    left: 8px;
+    top: 24px;
+    border-radius: 5px;
+}
+
+.msg_a1 {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    min-height: 15px;
+    padding: 15px;
+    background: #99FFCC;
+    position: relative;
+    border-radius: 5px;
+}
+
+.msg_a1:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 7px;
+    left: -29px;
+    border: 15px solid;
+    border-color: transparent #99FFCC transparent transparent;
+}
+
+.msg_b1 {
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    min-height: 15px;
+    padding: 15px;
+    background: #FFFF99;
+    position: relative;
+    border-radius: 5px;
+}
+
+.msg_b1:before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    top: 7px;
+    right: -29px;
+    border: 15px solid;
+    border-color: transparent transparent transparent #FFFF99;
+}

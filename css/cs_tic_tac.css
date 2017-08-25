@@ -1,0 +1,114 @@
+#ha-game-pane .container-fluid {
+    padding: 0;
+    text-align: center;
+    width: 320px;
+    color: #eee;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#ha-game-pane .box {
+    border: 5px solid #000;
+    font-size: 5.5em;
+    height: 90px;
+    width: 50px;
+    line-height: 60px;
+    cursor: pointer;
+    font-family: Permanent Marker;
+    /*box-shadow: inset 2px -1px 6px #000, 5px 5px 15px #000;*/
+}
+
+#ha-game-pane .row {
+    width: 300px;
+}
+
+#ha-game-pane .tl,
+#ha-game-pane .ml,
+#ha-game-pane .bl {
+    margin-left: 30px;
+}
+
+#ha-game-pane .tr,
+#ha-game-pane .mr,
+#ha-game-pane .br {
+    border-right: 0px solid #111;
+}
+
+#ha-game-pane .bl,
+#ha-game-pane .bm,
+#ha-game-pane .br {
+    border-bottom: 0px solid #111;
+    margin-bottom: 30px
+}
+
+#ha-game-pane .tl,
+#ha-game-pane .tm,
+#ha-game-pane .tr {
+    border-top: 0px solid #fff;
+    margin-top: 30px
+}
+
+#ha-game-pane .dialog {
+    background: #fff;
+    color: #222;
+    margin: 0 auto;
+    padding-top: 2em;
+    width: 280px;
+    height: 394px;
+    /*box-shadow: inset 2px -1px 6px #000, 5px 5px 15px #000;*/
+}
+
+#ha-game-pane .score {
+    color: #eee;
+    font-weight: 900;
+    background: #111;
+    margin: 0 auto;
+    padding: 5px 3em 0px 3em;
+    width: 220px;
+}
+
+#ha-game-pane #comm {
+    font-size: 3.5em;
+    margin-bottom: 0.3em;
+}
+
+#ha-game-pane input:radio {
+    margin-right: 15px;
+}
+
+#ha-game-pane .btn {
+    font-size: 2em;
+    background: #111;
+    color: #ddd;
+    margin: 0 auto;
+    width: 9em;
+}
+
+#ha-game-pane .btn:hover {
+    color: #fff;
+}
+
+#ha-game-pane .text {
+    width: 320px;
+}
+
+#ha-game-pane form {
+    font-size: 1.5em;
+    width: 14.9em;
+    line-height: 2.5em;
+    margin: 0 auto;
+    margin-bottom: 1em;
+}
+
+#ha-game-pane .game {
+    border: 1px solid #444;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    background: #000;
+    /* box-shadow: inset 0 -1px 6px #000, 5px 5px 15px #000; */
+}
+
+#ha-game-pane .panel-heading {
+    color: #000;
+}
