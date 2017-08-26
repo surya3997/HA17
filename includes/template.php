@@ -9,11 +9,11 @@ class Template {
     private $pageName;
     private $pageTitle;
     private $templateVars;
-	private $rootPath;
+    private $rootPath;
     private $levelId;
     //This is the constructor of template class. Nothing much to do.
     function __construct() {
-		$this->rootPath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
+        $this->rootPath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
         $this->pageName = '';
     }
 
@@ -30,6 +30,11 @@ class Template {
     //This function is used to set the page title.
     public function setPageTitle($pageTitle)  {
         $this->pageTitle = $pageTitle;
+    }
+
+    //This function is used to get the page title for the template page.
+    private function getPageTitle() {
+        return $this->pageTitle;
     }
 
     /**
@@ -110,10 +115,10 @@ class Template {
     public function loadPage()  {
         //Do some common data computation
         $this->CalculateCommonData();
-		//Now we load all the pages.
-		include $this->rootPath.'templates/level_source/template_header.php';
-		include $this->rootPath.'templates/level_source/level_'.$this->pageName.'.php';
-		include $this->rootPath.'templates/level_source/template_footer.php';
+        //Now we load all the pages.
+        include $this->rootPath.'templates/level_source/template_header.php';
+        include $this->rootPath.'templates/level_source/level_'.$this->pageName.'.php';
+        include $this->rootPath.'templates/level_source/template_footer.php';
     }
 
     /**

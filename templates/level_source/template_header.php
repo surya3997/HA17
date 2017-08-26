@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Nav_bar Template</title>
+    <title><?php echo $this->getPageTitle(); ?></title>
     <!-- General libraries -->
     <link href="css/general/bootstrap.min.css" rel="stylesheet">
     <link href="res/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@
         <div id="ha-help-pane" class="{title:'Ask for Help'}">
             <div class="content">
                 <div id="ha-robot-avatar-image">
-                    <img src="res/images/RobotAvatarSmall.png" />
+                    <img src="res/images/hackaventure_150x150.png" />
                 </div>
                 <div id="ha-help-pane-content">
                     <div class="loading-image">

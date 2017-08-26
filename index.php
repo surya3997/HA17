@@ -19,7 +19,7 @@
 
     /* change this */
     
-    $template->setPageTitle('HackArena');
-	$template->setPage('0');
-	$template->loadPage();
+    $template->setPageTitle('Hack-a-Venture');
+    $template->setPage('0');
+    $template->loadPage();
 ?>

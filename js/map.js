@@ -126,6 +126,9 @@ $('#pop_mobile').on('click', function() {
     });
 
     map.addListener("clickMapObject", function(event) {
-        console.log('Clicked ID: ' + event.mapObject.id + ' (' + event.mapObject.title + ')');
+        var index = places.indexOf(event.mapObject.id);
+        var level = (index + 1).toString();
+        console.log('Clicked level: ' + level);
+        window.location = "level.php?level=" + level;
     });
 });

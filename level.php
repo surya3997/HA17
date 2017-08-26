@@ -1,7 +1,6 @@
 <?php
-    echo "<script>console.log( 'surya' );</script>";
     include_once 'includes/config.php';
-    //Dconsole("why?");
+
     if(!$session->isLoggedIn()) {   //redirect to login if the user is not authenticated.
         PageRedirect('login');
     }
@@ -50,10 +49,9 @@
     //include 'levels_detail/detail_php_level_'.$level.'.php';
 
     
-
     //We need the templating engine to load the require page.
     $template->setPageTitle('Level');
     $template->setPage($level);
-    $template->setLevelId($level);
+    //$template->setLevelId($level);
     $template->loadPage();
 ?>
