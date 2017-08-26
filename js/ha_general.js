@@ -161,9 +161,9 @@ $(document).ready(function() {
      * This is for the logout button in the Navigation bar
      */
     $("#LogoutUser").on('click', function() {
-        /*     $.post('ajax/logout.php', {}, function(response) {
-                window.location = "index.php";
-            }); */
+        $.post('ajax/logout.php', {}, function(response) {
+            window.location = "index.php";
+        });
     });
 
     $('#ShowContact').on('click', function() {
@@ -339,71 +339,6 @@ $(document).ready(function() {
         $('#help-pane-confirm-hint').dialog("open");
     });
 
-    /**
-     * For creating the inventory on item click
-     */
-    /* $("#ha-inventory-dialog").dialog({
-        autoOpen: false,
-        width: 665,
-        height: 500,
-        buttons: [{
-            text: "Close",
-            click: function() {
-                $(this).dialog("close");
-            }
-        }]
-    }); */
-
-    /**
-     * Listener to open the inventory dialog box.
-     */
-    /* $("#view-inventory").click(function(event) {
-        $("#ha-inventory-dialog").dialog("open");
-        //Start the AJAX call to fetch the data
-        $.post('ajax/getInventoryItems.php', {}, function(data) {
-            //Load the tooltips for the items in the inventory. Courtesy of JQueryUI
-            var jsonData = JSON.parse(data);
-            HandleAuthFailedStatus(jsonData.status);
-            if (jsonData.count <= 0) {
-                //Oops. This should not happen really.
-                $('#inventory-list-pane').html('<div>No items in your inventory.</div>');
-            } else {
-                //Load em up
-                var htmlData = '';
-                for (var itemIter = 0; itemIter < jsonData.count; itemIter++) {
-                    htmlData += '<div class="inventory-item">';
-                    htmlData += '<div class="inventory-item-name">' + jsonData.items[itemIter].name + '</div>';
-                    htmlData += '<div class="inventory-item-image"> <img src="res/inventory_items/' + jsonData.items[itemIter].image + '_50.png" width="50px" height="50px"/>' + '</div>';
-                    htmlData += '<div class="inventory-item-desc"> ' + jsonData.items[itemIter].description + '</div>';
-                    htmlData += '</div>';
-                }
-                //Set the data
-                $('#inventory-list-pane').html(htmlData);
-                //Load the tooltip for everything.
-                $('[data-toggle="tooltip"]').tooltip({
-                    show: {
-                        effect: "slideDown",
-                        delay: 50
-                    }
-                });
-            }
-        });
-        event.preventDefault();
-    }); */
-
-    /**
-     * Listener for opening the clicked on item in the detailed viewer.
-     */
-    /* $('#ha-inventory-dialog').on('click', '.inventory-item', function() {
-        var selectedItem = $(this).children();
-        var selectedItemName = $(selectedItem[0]).html();
-        $('#inventory-selected-item-name').html(selectedItemName);
-        var selectedItemImage = $($(selectedItem[1]).html()).attr('src');
-        $('#inventory-selected-item-image').html('<img src="' + selectedItemImage + '" height="150px" width="150px"/>');
-        var selectedItemDesc = $(selectedItem[2]).html();
-        $('#inventory-selected-item-description').html(selectedItemDesc);
-    }); */
-
     /*
      * This is for the ToolTip using Jquery UI 
      */
@@ -436,8 +371,6 @@ $(document).ready(function() {
     });
     
     */
-
-
 
     $('#go-fullscreen').click(function() {
         // alert("now going to full screen");
