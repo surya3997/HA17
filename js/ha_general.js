@@ -170,7 +170,7 @@ $(document).ready(function() {
         InvokeCustomMessageDialog('<div style="text-align:center;font-size:1.5em;font-weight:bold;">Contact</div><br><div><span style="font-weight:bold;">Email : </span>hackaventure2k17@gmail.com</div><div><span style="font-weight:bold;"> Co-ordinator : </span>Surya Prasath S</div><div><span style="font-weight:bold"> Phone Number : </span>+91 97917 45977</div>');
     });
 
-    /* $.post('ajax/getLastSeenAnnoun.php', {}, function(response) {
+    $.post('ajax/getLastSeenAnnoun.php', {}, function(response) {
         var jsonData = JSON.parse(response);
         if (jsonData.status == EnumStatus.OK) {
             if (jsonData.count == 0) {
@@ -179,13 +179,13 @@ $(document).ready(function() {
                 $('.has_count_announ').attr('data-after', jsonData.count);
             }
         }
-    }); */
+    });
 
     $('#announ_bell').on('click', function() {
         var self = this;
-        /* $.post('ajax/getLastSeenAnnoun.php', { 'PUT': '' }, function(response) {
+        $.post('ajax/getLastSeenAnnoun.php', { 'PUT': '' }, function(response) {
             $(self).removeClass('has_count_announ');
-        }); */
+        });
     });
 
     /**
@@ -270,7 +270,7 @@ $(document).ready(function() {
         };
 
         if (window.location.pathname.indexOf('index.php') != -1) { // Load the general information.
-            $('#ha-help-pane-content').html('Welcome to HackArena Console.<hr />This is where you can select different locations you would like to play next.<br />');
+            $('#ha-help-pane-content').html('Hello friend.<hr />Ask me if you are stuck at any point. I\'m good at solving problems.<br><br>And you know that when I am good at something, I can\'t do it for free!');
         } else { ///Load the help for the particular stage
             //Get the level id parameter from the url.
             var levelIdDetails = GetCurrentLevelId();
@@ -352,7 +352,7 @@ $(document).ready(function() {
     /**
      * This is for loading the announcements
      */
-    /*
+
     $.post('ajax/getAnnouncements.php', {}, function(data) {
         var jsonData = JSON.parse(data);
         HandleAuthFailedStatus(jsonData.status);
@@ -369,8 +369,8 @@ $(document).ready(function() {
             $('#announcements').html(htmlData);
         }
     });
-    
-    */
+
+
 
     $('#go-fullscreen').click(function() {
         // alert("now going to full screen");
