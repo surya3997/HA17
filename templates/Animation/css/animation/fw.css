@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400);
+@import url(http://fonts.googleapis.com/css?family=Karla:400);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata:400);
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#animationBody {
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    background: grey;
+    overflow: hidden;
+    position: fixed;
+}
+
+.low-z-index {
+    z-index: 1;
+}
+
+#ha-anim-hero-speech {
+    font-family: Inconsolata, "Lucida Console", Monaco, Courier, monospace;
+    position: relative;
+    opacity: 0;
+    width: 475px;
+    margin: 0 auto;
+    height: 160px;
+    z-index: 5;
+    /* background: pink; */
+    border-radius: 15px;
+    padding: 10px;
+    background-image: url('../../res/animation_images/hero-dialog.png');
+    background-repeat: no-repeat;
+}
+
+#ha-anim-heroine-speech {
+    font-family: Inconsolata, "Lucida Console", Monaco, Courier, monospace;
+    position: relative;
+    opacity: 0;
+    width: 475px;
+    margin: 0 auto;
+    height: 160px;
+    z-index: 5;
+    /* background: pink; */
+    border-radius: 15px;
+    padding: 10px;
+    background-image: url('../../res/animation_images/wife-dialog.png');
+    background-repeat: no-repeat;
+}
+
+#ha-anim-hero-speech-container {
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    z-index: 2;
+}
+
+#ha-anim-heroine-speech-container {
+    width: 100%;
+    height: 220px;
+    position: absolute;
+    z-index: 2;
+}
+
+#ha-anim-speech-typed {
+    position: absolute;
+    width: 285px;
+    left: 160px;
+    height: 90px;
+    top: 32px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+#ha-anim-heroine-speech-typed {
+    position: absolute;
+    width: 285px;
+    left: 160px;
+    height: 80px;
+    top: 32px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

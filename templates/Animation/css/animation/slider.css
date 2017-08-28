@@ -1,0 +1,115 @@
+#ha_anim_slider_container {
+    top: 25px;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    background: grey;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#c3c3c3, #b0afb0);
+    /* Standard syntax */
+    z-index: 3;
+    opacity: 0.5;
+}
+
+#ha_anim_slider_hiding {
+    top: 25px;
+    height: 30px;
+    min-height: 30px;
+    border-radius: 15px;
+    position: absolute;
+    background: grey;
+    /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#c3c3c3, #b0afb0);
+    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#c3c3c3, #b0afb0);
+    /* Standard syntax */
+    z-index: 4;
+    opacity: 1;
+}
+
+#ha_anim_slider_hider_holder {
+    width: 20px;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+#ha_anim_slider_container:hover {
+    opacity: 1;
+}
+
+#ha-anim-slider-leftnav {
+    float: left;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 1.2em;
+}
+
+#ha-anim-slider-rightnav {
+    float: right;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 1.2em;
+}
+
+#ha-anim-slider-leftnav:hover,
+#ha-anim-slider-rightnav:hover {
+    cursor: pointer;
+}
+
+#ha-anim-slider-leftnav>i,
+#ha-anim-slider-rightnav>i {
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+}
+
+.ha_anim_slider_page {
+    width: 10px;
+    height: 10px;
+    min-height: 10px;
+    float: left;
+    margin: 10px;
+    border-radius: 50%;
+    background: #DDDDDD;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    /* cursor: pointer; */
+}
+
+.ha_anim_slider_page:hover {
+    width: 12px;
+    height: 12px;
+    margin: 9px;
+}
+
+.ha_anim_slider_selected {
+    background: #2d8ce2;
+    border: 0px;
+    -webkit-transition: background 0.5s;
+    transition: background 0.5s;
+}
+
+.clear-div {
+    clear: both;
+}

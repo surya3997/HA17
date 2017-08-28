@@ -34,7 +34,7 @@
                     <div id="endOfGameTimer"></div>
                 </li>
                 <li>
-                    <a href="#" id="watch-animation" data-toggle="tooltip" title="View Story"><i class="fa fa-eye"></i></a>
+                    <a href="./narrator.php?level=1" id="watch-animation" data-toggle="tooltip" title="View Story"><i class="fa fa-eye"></i></a>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell has_count_announ" id="announ_bell"></i> <b class="caret"></b></a>
