@@ -46,7 +46,7 @@
     
     //We need some setup for each level. We store them in separate files in another folder.
     //They will be included into this file as required.
-    //include 'levels_detail/detail_php_level_'.$level.'.php';
+    include 'levels_detail/detail_php_level_'.$level.'.php';
 
     
     //We need the templating engine to load the require page.

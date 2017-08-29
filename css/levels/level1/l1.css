@@ -1,0 +1,67 @@
+/* body{
+    margin:0px;
+    color:#6a6f8c;
+    background:url(city3.jpg) no-repeat;
+    background-size: cover;
+    font:600 16px/18px 'Open Sans',sans-serif;
+} */
+
+#layout {
+    height: 90%;
+    position: relative;
+    width: 90%;
+    background-color: gray;
+}
+
+.col-md-12 {
+    width: 50%;
+    margin-left: 21%;
+}
+
+#compimg1 {
+    height: 105px;
+    padding: 2%;
+}
+
+#compimg2 {
+    height: 105px;
+    padding: 2%;
+    margin-left: 15%;
+}
+
+#box {
+    background-color: rgba(20, 11, 20, 0.83);
+    opacity: 1;
+    margin-top: 207px;
+    padding-left: 22%;
+}
+
+#textarea1 {
+    height: 233px;
+    width: 100%;
+    background-color: rgba(20, 11, 20, 0.83);
+    color: red;
+}
+
+#textarea2 {
+    height: 233px;
+    width: 100%;
+    background-color: rgba(20, 11, 20, 0.83);
+    color: red;
+}
+
+#modalHead {
+    background-color: black;
+}
+
+img {
+    height: 25px;
+}
+
+textarea {
+    resize: none;
+}
+
+#closeimg {
+    float: center;
+}

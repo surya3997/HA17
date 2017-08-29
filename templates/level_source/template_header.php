@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="./css/phonepopstyle.css">
     <link rel="stylesheet" href="./css/chat.css">
     <link rel="stylesheet" href="./css/leaderboard.css">
+
+    <!-- Load level related styles -->
+    <?php $this->printVar('LEVEL_CSS'); ?>
 </head>
 
 <body id="login" class="loaded">

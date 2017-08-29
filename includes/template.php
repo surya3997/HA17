@@ -69,9 +69,9 @@ class Template {
         $levelCSSLinks = ''; //<link href="css/ha-general.css" rel="stylesheet">
         $levelJSLinks = '';
         
-        switch($this->levelId) {
-            case '1':
-
+        switch($this->pageName) {
+            case '1':   $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level1/l1.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="js/levels/level1/l1.js"></script>';
                 break;
             case '2' :
                 

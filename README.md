@@ -58,3 +58,6 @@ cookie level (level 6)
 play fair cipher (level 7)
 
 botwars file upload page - 4
+
+
+"./res/images/background.jpg"

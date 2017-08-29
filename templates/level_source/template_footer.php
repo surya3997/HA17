@@ -130,7 +130,7 @@
     <script src="js/worldLow.js"></script>
 
     <!-- Level Specific JS file. Add dynamically. -->
-    <!-- <?php $this->printVar('LEVEL_JS'); ?> -->
+    <?php $this->printVar('LEVEL_JS'); ?>
     <!-- <script src="js/L5.js"></script> -->
 </body>
 
