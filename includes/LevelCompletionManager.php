@@ -137,6 +137,11 @@ class LevelCompletionManager {
         $reduction = $db->result($query)->total_reduction;
         $grossScore = $maxScore - $reduction;
         $cTime = time();
+
+        if($reduction == '') {
+                $reduction = '0';
+        }
+
         //Insert this into the DB
         $sql = 'INSERT INTO '.DBT_SCORE.'(`user_id`, `level_id`, `reduction`, `gross_score`, `remark`, `timestamp`)
                     VALUES '."('{$userId}', '{$levelId}', '{$reduction}', '{$grossScore}', 'Level{$levelId} Completion', '{$cTime}')";
@@ -165,38 +170,7 @@ class LevelCompletionManager {
         //Calculate the score for the user.
         //First get the maximum score for that level.
         LevelCompletionManager::AddScoreForLevel($levelId);
-        //Now get the next few levels that have to be opened up. 
-        /* $sql = 'SELECT `to`
-                FROM '.DBT_LEVEL_ORDER.'
-                WHERE `from` = \''.$levelId.'\'';
-        $query = $db->query($sql);
-        if($db->numRows($query) > 0) {
-            while(($row = $db->result($query)) != NULL) {
-                //First check if this already exists in the user. This is mainly required when it is level 7 that is to be opened.
-                if($row->to == '7') {
-                    $sql = 'SELECT * 
-                            FROM '.DBT_USER_LEVELS.'
-                            WHERE `user_id` = \''.$userId.'\'
-                                AND `level_id` = \'7\'';
-                    $query = $db->query($sql);
-                    if($db->numRows($query) > 0) {
-                        $db->freeResults($query);
-                        continue; // No need to insert. Already exists.
-                    }
-                }
-                //Add these to the open levels.
-                $sql = 'INSERT INTO '.DBT_USER_LEVELS."
-                            (`user_id`, `level_id`, `open_time`, `close_time`)
-                            VALUES('{$userId}', '{$row->to}', NULL, NULL)";
-                $db->query($sql);
-                //Add time spend LEVEL_USER_DATA 
-                $lvlDataMgr = new LevelDataManager($row->to);
-                $lvlDataMgr->SetData('time_spent', '0');
-            }
-            $db->freeResults($query);
-        } */
-        //Add the required inventory items to the game.
-        //LevelCompletionManager::AddInventoryItems($levelId);
+        
         //Set a all good status
         $retData['status'] = ENUM_STATUS_OK;
         //Return the data.

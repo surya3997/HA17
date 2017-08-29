@@ -11,12 +11,11 @@
     }
 
     $level = clean($_GET['level']);
-    
-    /* change this */
+  
     //Check if the level is open.
-    /* if(!$levelMgr->IsLevelOpen($level)) {
+    if(!$levelMgr->IsLevelOpen($level)) {
         header('Location:index.php');
-    } */
+    }
     
     //Set the start time of the level.
     $sql = 'SELECT `open_time`, `anim_viewed`

@@ -49,10 +49,14 @@ function fn1() {
         var jsonData = JSON.parse(data);
         console.log(jsonData);
         if (jsonData.status == EnumStatus.OK) {
+            closeFn();
+            closeFn1();
             InvokeCustomMessageDialog("You have cleared the level.", function() {
                 window.location = 'index.php';
             });
         } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
+            closeFn();
+            closeFn1();
             InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
                 window.location = 'index.php';
             });
