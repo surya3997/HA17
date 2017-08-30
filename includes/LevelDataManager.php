@@ -13,6 +13,10 @@ class LevelDataManager {
         $this->levelId = $levelId;
     }
 
+    public function getLevelId() {
+        return $this->levelId;
+    }
+
     /**
      * Method to set a value. IF the update param is true then we can force an update if it already exists.
      */

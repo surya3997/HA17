@@ -17,6 +17,11 @@ class Template {
         $this->pageName = '';
     }
 
+    private function getUserName() {
+        global $user;
+        return $user->getUserName();
+    }
+
     //This function is used to set the page name.
     public function setPage($page)  {
         $page = trim($page);
@@ -25,6 +30,11 @@ class Template {
             return true;
         }
         return false;
+    }
+
+    //This function is used to get the page name.
+    public function getPage()  {
+        return $this->pageName;
     }
 
     //This function is used to set the page title.
@@ -42,6 +52,10 @@ class Template {
      */
      public function setLevelId($level) {
         $this->levelId = $level;
+    }
+
+    public function getLevelId() {
+        return $this->levelId;
     }
 
     //Used for setting a single variable of So

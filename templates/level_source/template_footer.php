@@ -39,7 +39,22 @@
                             <div class="msg_wrap" style="height:425px">
                                 <div class="msg_body">
                                     <div class="msg_a">
-                                        
+                                    <?php 
+                                            $sql = 'SELECT name FROM `ha_level` WHERE `id` = '.$this->getPage();
+                                            //Dconsole($this->getPage());
+                                            global $db;
+                                            $query = $db->query($sql);
+                                            /* if($db->numRows($query) > 0)    {
+                                                while(($row = $db->result($query)) != NULL) {
+                                                    array_push($retStatus['content'], array('data' => $row->content, 'time' => $row->post_time));
+                                                }
+                                                $db->freeResults($query);
+                                            }  */
+
+                                            $row = $db->result($query);
+                                            
+                                            echo $row->name;
+                                        ?>
                                     </div>
                                     <div class="msg_b"> this is from a</div>
                                     <div class="msg_insert"></div>

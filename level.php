@@ -42,6 +42,9 @@
     
     //Set up the level data handler for that level.
     $levelDataMgr = new LevelDataManager($level);
+
+    $sql = 'UPDATE `ha_user` SET `current_level`= '.$level.' WHERE id = '.$user->getUserId();
+    $db->query($sql);
     
     //We need some setup for each level. We store them in separate files in another folder.
     //They will be included into this file as required.

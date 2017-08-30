@@ -5,9 +5,20 @@
         die(json_encode(array('status' => ENUM_STATUS_AUTH_FAILED)));
     }
 
+    global $levelDataMgr;
+
     $retStatus = array();
     $retStatus['status'] = ENUM_STATUS_OK;
     $retStatus['content'] = array();
+    
+
+    $sql = 'SELECT current_level FROM `ha_user` WHERE `id` = '.$user->getUserId();
+    $query = $db->query($sql);
+    $result = $db->result($query);
+
+    //array_push($retStatus['level'], $result->current_level);
+
+    $retStatus['level'] = $result->current_level;
 
     $sql = 'SELECT `level_id` 
             FROM '.DBT_USER_LEVELS.'
@@ -15,6 +26,7 @@
             'AND `user_id` = \''.$user->getUserId().'\'';
     $query = $db->query($sql);
     if($db->numRows($query) > 0)    {
+        //array_push($retStatus['level'], $template->getLevelId());
         while(($row = $db->result($query)) != NULL) {
             array_push($retStatus['content'], $row->level_id);
         }
