@@ -28,6 +28,18 @@
                 $result['status'] = ENUM_STATUS_FAILED;
             }
             break;
+
+        case '4':
+            LevelCompletionManager::LogCompletionAttempt('4');
+            $completeStatus = LevelCompletionManager::CompleteLevel('4');
+            $result['status'] = $completeStatus['status'];
+            break;
+
+        case '11':
+            LevelCompletionManager::LogCompletionAttempt('11');
+            $completeStatus = LevelCompletionManager::CompleteLevel('11');
+            $result['status'] = $completeStatus['status'];
+            break;
         
         default:
             $result['status'] = ENUM_STATUS_ILLEGAL;

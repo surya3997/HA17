@@ -71,7 +71,7 @@ function HandleAuthFailedStatus(status) {
  * Function to unlock and load the next hint.
  */
 function GetNextHint(level) {
-    /* $.post('ajax/buymorehint.php', { level: level }, function(response) {
+    $.post('ajax/buymorehint.php', { level: level }, function(response) {
         var jsonData = JSON.parse(response);
         HandleAuthFailedStatus(jsonData.status);
         if (jsonData.status == EnumStatus.OK) {
@@ -92,7 +92,7 @@ function GetNextHint(level) {
             //Need to wait some more time before the hints are revealed.
             InvokeCustomMessageDialog("You need to wait for sometime before I can tell you something. (Please wait " + jsonData.time_left + " for your next hint)");
         }
-    }); */
+    });
 }
 
 /**
@@ -136,10 +136,10 @@ window.activityTrackerInterval = setInterval(function() {
     }
     var cTime = (new Date()).getTime();
     if ((cTime - window.activityTracker) <= 5000) {
-        /*   $.post('ajax/levelTime.php', { level: levelIDData['level'] }, function(data) {
-              var jsonData = JSON.parse(data);
-              HandleAuthFailedStatus(jsonData.status);
-          }); */
+        $.post('ajax/levelTime.php', { level: levelIDData['level'] }, function(data) {
+            var jsonData = JSON.parse(data);
+            HandleAuthFailedStatus(jsonData.status);
+        });
     }
 }, 5000);
 
@@ -279,7 +279,7 @@ $(document).ready(function() {
                 window.location = 'index.php';
             }
             var level = levelIdDetails['level'];
-            /* $.post('ajax/levelhint.php', { level: level }, function(response) {
+            $.post('ajax/levelhint.php', { level: level }, function(response) {
                 var jsonData = JSON.parse(response);
                 HandleAuthFailedStatus(jsonData.status);
                 if (jsonData.status == EnumStatus.OK) {
@@ -290,7 +290,7 @@ $(document).ready(function() {
                         window.location = 'index.php';
                     });
                 }
-            }); */
+            });
         }
     });
 

@@ -1,0 +1,323 @@
+html,
+body {
+    height: 100%;
+    font-family: verdana, arial, sans-serif;
+    color: #555555;
+}
+
+
+/* 
+#malaysia_html {
+    margin-top: 20%;
+    height: 550px;
+} */
+
+#malaysia_html .nav {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+}
+
+#malaysia_html a {
+    color: #222222;
+}
+
+#malaysia_html a:hover {
+    text-decoration: none;
+}
+
+#malaysia_html hr {
+    border-color: #dedede;
+}
+
+#malaysia_html .wrapper,
+#malaysia_html .row {
+    height: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#malaysia_html .wrapper:before,
+#malaysia_html .wrapper:after,
+#malaysia_html .column:before,
+#malaysia_html .column:after {
+    content: "";
+    display: table;
+}
+
+#malaysia_html .wrapper:after,
+#malaysia_html .column:after {
+    clear: both;
+}
+
+#malaysia_html .column {
+    height: 100%;
+    overflow: auto;
+    *zoom: 1;
+}
+
+#malaysia_html .column .padding {
+    padding: 20px;
+}
+
+
+/* #malaysia_html .full {
+    padding-top: 70px;
+} */
+
+#malaysia_html .navbar {
+    z-index: 0;
+}
+
+#malaysia_html #separate {
+    width: 500px;
+}
+
+#drdown {
+    margin-right: 15px;
+}
+
+#malaysia_html .box {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #444444;
+}
+
+#malaysia_html .divider {
+    margin-top: 32px;
+}
+
+#malaysia_html .navbar-blue {
+    border-width: 0;
+    background-color: #3B5999;
+    color: #ffffff;
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+
+#malaysia_html .navbar-blue li>a,
+#malaysia_html .navbar-toggle {
+    color: #efefef;
+}
+
+#malaysia_html .navbar-blue .dropdown-menu li a {
+    color: #2A4888;
+}
+
+#malaysia_html .navbar-blue .dropdown-menu li>a {
+    padding-left: 30px;
+}
+
+#malaysia_html .navbar-blue li>a:hover,
+#malaysia_html .navbar-blue li>a:focus,
+#malaysia_html .navbar-blue .open,
+#malaysia_html .navbar-blue .open>a,
+#malaysia_html .navbar-blue .open>a:hover,
+#malaysia_html .navbar-blue .open>a:focus {
+    background-color: #2A4888;
+    color: #fff;
+}
+
+#malaysia_html #main {
+    background-color: #e9eaed;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 20%;
+    margin-top: 7%;
+}
+
+#malaysia_html #main .img-circle {
+    margin-top: 18px;
+    height: 70px;
+    width: 70px;
+}
+
+#malaysia_html #sidebar {
+    padding: 0px;
+    padding-top: 15px;
+}
+
+#malaysia_html #sidebar,
+#malaysia_html #sidebar a,
+#malaysia_html #sidebar-footer a {
+    color: #ffffff;
+    background-color: transparent;
+    text-shadow: 0 0 2px #000000;
+    padding-left: 5px;
+}
+
+#malaysia_html #sidebar .nav li>a:hover {
+    background-color: #393939;
+}
+
+#malaysia_html .logo {
+    display: block;
+    padding: 3px;
+    background-color: #fff;
+    color: #3B5999;
+    height: 28px;
+    width: 28px;
+    margin: 9px;
+    margin-right: 2px;
+    margin-left: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 0 1px;
+    border-radius: 2px;
+}
+
+#malaysia_html #sidebar-footer {
+    background-color: #444;
+    position: absolute;
+    bottom: 5px;
+    padding: 5px;
+}
+
+#malaysia_html #footer {
+    margin-bottom: 20px;
+}
+
+
+/* bootstrap overrides */
+
+#malaysia_html h1,
+#malaysia_html h2,
+#malaysia_html h3 {
+    font-weight: 800;
+}
+
+#malaysia_html .navbar-toggle,
+#malaysia_html .close {
+    outline: 0;
+}
+
+#malaysia_html .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+#malaysia_html .btn-primary,
+#malaysia_html .label-primary,
+#malaysia_html .list-group-item.active,
+#malaysia_html .list-group-item.active:hover,
+#malaysia_html .list-group-item.active:focus {
+    background-color: #3B5999;
+    color: #fffffe;
+}
+
+#malaysia_html .btn-default {
+    color: #666666;
+    text-shadow: 0 0 1px rgba(0, 0, 0, .3);
+}
+
+#malaysia_html .panel textarea,
+#malaysia_html .well textarea,
+#malaysia_html textarea.form-control {
+    resize: none;
+}
+
+#malaysia_html .badge {
+    color: #3B5999;
+    background-color: #fff;
+}
+
+#malaysia_html .badge:hover,
+#malaysia_html .badge-inverse {
+    background-color: #3B5999;
+    color: #fff;
+}
+
+#malaysia_html .jumbotron {
+    background-color: transparent;
+}
+
+#malaysia_html .label-default {
+    background-color: #dddddd;
+}
+
+#malaysia_html .page-header {
+    margin-top: 55px;
+    padding-top: 9px;
+    border-top: 1px solid #eeeeee;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+#malaysia_html .panel-default .panel-heading {
+    background-color: #f9fafb;
+    color: #555555;
+}
+
+#malaysia_html .col-sm-9.full {
+    width: 100%;
+}
+
+#malaysia_html .modal-header,
+#malaysia_html .modal-footer {
+    background-color: #f2f2f2;
+    font-weight: 800;
+    font-size: 12px;
+}
+
+#malaysia_html .modal-footer i,
+#malaysia_html .well i {
+    font-size: 20px;
+    color: #c0c0c0;
+}
+
+#malaysia_html .modal-body {
+    padding: 0px;
+}
+
+#malaysia_html .modal-body textarea.form-control {
+    resize: none;
+    border: 0;
+    box-shadow: 0 0 0;
+}
+
+#malaysia_html small.text-muted {
+    font-family: courier, courier-new, monospace;
+}
+
+@media (max-width: 768px) {
+    #malaysia_html .column .padding {
+        padding: 7px;
+    }
+    #malaysia_html .full {
+        padding-top: 20px;
+    }
+    #malaysia_html .navbar-blue {
+        background-color: #3B5999;
+        top: 0;
+        width: 100%;
+        position: relative;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #malaysia_html .row-offcanvas {
+        position: relative;
+        -webkit-transition: all 0.25s ease-out;
+        -moz-transition: all 0.25s ease-out;
+        transition: all 0.25s ease-out;
+    }
+    #malaysia_html .row-offcanvas-left.active {
+        left: 33%;
+    }
+    #malaysia_html .row-offcanvas-left.active .sidebar-offcanvas {
+        left: -33%;
+        position: absolute;
+        top: 0;
+        width: 33%;
+        margin-left: 5px;
+    }
+    #malaysia_html #sidebar,
+    #malaysia_html #sidebar a,
+    #malaysia_html #sidebar-footer a {
+        padding-left: 3px;
+    }
+}

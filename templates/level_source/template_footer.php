@@ -139,7 +139,6 @@
 
     <!-- Level Specific JS file. Add dynamically. -->
     <?php $this->printVar('LEVEL_JS'); ?>
-    <!-- <script src="js/L5.js"></script> -->
 </body>
 
 </html>

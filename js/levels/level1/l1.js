@@ -47,7 +47,7 @@ function fn1() {
 
     $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
         var jsonData = JSON.parse(data);
-        console.log(jsonData);
+        //console.log(jsonData);
         if (jsonData.status == EnumStatus.OK) {
             closeFn();
             closeFn1();

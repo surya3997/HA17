@@ -94,7 +94,8 @@ class Template {
                 
                 break;
             case '4':
-                
+                        $levelCSSLinks = '<link href="./css/levels/level4/facebook.css" rel="stylesheet">';
+                        $levelJSLinks = '<script type="text/javascript" src="./js/levels/level4/facebook.js"></script>';
                 break;
             case '5':
                 

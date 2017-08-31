@@ -29,9 +29,9 @@ minVal = 5;
 secVal = 0;
 
 var log = [];
-log.push('Password:' + caesar('genisys'));
-log.push('Password:' + caesar('genisys'));
-log.push('Password:' + caesar('genisys'));
+log.push('Try some other ways to find the password!!!');
+log.push('Try some other ways to find the password!!!');
+log.push('Try some other ways to find the password!!!');
 var directory = [];
 directory.push('bin\tetc\troot\tNetwork\tOS');
 directory.push('hello.txt\tNetwork.py');
@@ -189,7 +189,7 @@ jQuery(document).ready(function($) {
         } else if (com[0] == 'sudo') {
             term.echo("type exit for exiting");
             term.push(function(command, term) {
-                if (command == 'genisys') {
+                if (command == 'blockchain') {
                     term.echo('Congrats the level is passed');
                     term.push(function(command, term) {
 
@@ -197,9 +197,27 @@ jQuery(document).ready(function($) {
                         name: 'sudo',
                         prompt: 'sudo@Hack-a-Venture$ '
                     });
+
+                    var levelId = GetCurrentLevelId()['level'];
+                    var answer = 'a';
+                    $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
+                        var jsonData = JSON.parse(data);
+                        if (jsonData.status == EnumStatus.OK) {
+                            InvokeCustomMessageDialog("You have cleared the level.", function() {
+                                window.location = 'index.php';
+                            });
+                        } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
+                            InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
+                                window.location = 'index.php';
+                            });
+                        } else {
+                            InvokeCustomMessageDialog("Access Denied.");
+                        }
+
+                    });
                 } else {
                     term.echo('Wrong Password Try AGAIN!!!');
-                    log[i] += ('\nPassword:' + caesar(command) + ' (WRONG)');
+                    //log[i] += ('\nPassword:' + command + ' (WRONG)');
                 }
             }, {
                 name: 'password',
@@ -210,8 +228,8 @@ jQuery(document).ready(function($) {
             currentp2 = new Date;
 
             currentp2.setMinutes(currentp2.getMinutes() + 5);
-            alert("c2" + currentp2);
-            alert("c" + current);
+            //alert("c2" + currentp2);
+            //alert("c" + current);
 
             time = new Date;
 
@@ -221,7 +239,7 @@ jQuery(document).ready(function($) {
             time.setHours(time.getHours() - hrsVal);
             time.setMinutes(time.getMinutes() - minVal);
             time.setSeconds(time.getSeconds() + secVal);
-            alert("t" + time);
+            //alert("t" + time);
             if (time <= currentp2 && time >= current) {
                 term.echo('Fetching from server.........');
                 term.echo('blockchain');
