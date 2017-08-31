@@ -111,6 +111,16 @@ class Template {
             case '10':
                 
                 break;
+            case '11':  $levelJSLinks = //'<script src="../js/jquery-1.7.1.min.js"></script>'.
+                                        '<script src="./js/levels/level11/jquery.mousewheel-min.js"></script>
+                                        <script src="./js/levels/level11/jquery.terminal.min.js"></script>
+                                        <script src="./js/levels/level11/terminal_cd.js"></script>
+                                        <script src="./js/levels/level11/main.js"></script>';
+                        $levelCSSLinks = '<link href="./css/levels/level11/jquery.terminal.css" rel="stylesheet" />';
+
+                break;
+            case '12':
+                break;
             default:
                 break;
         }
