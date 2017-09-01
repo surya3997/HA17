@@ -27,6 +27,7 @@
 </head>
 
 <body id="login" class="loaded">
+<div class="container">
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">

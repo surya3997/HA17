@@ -1,13 +1,32 @@
-.terminal .terminal-output .format, .cmd .format,
-.cmd .prompt, .cmd .prompt div, .terminal .terminal-output div div{
+#uk_html .terminal .terminal-output .format,
+#uk_html .cmd .format,
+#uk_html .cmd .prompt,
+#uk_html .cmd .prompt div,
+#uk_html .terminal .terminal-output div div {
     display: inline-block;
 }
-.terminal h1, .terminal h2, .terminal h3, .terminal h4, .terminal h5, .terminal h6, .terminal pre, .cmd {
+
+#uk_html .terminal h1,
+#uk_html .terminal h2,
+#uk_html .terminal h3,
+#uk_html .terminal h4,
+#uk_html .terminal h5,
+#uk_html .terminal h6,
+#uk_html .terminal pre,
+#uk_html .cmd {
     margin: 0;
 }
-.terminal h1, .terminal h2, .terminal h3, .terminal h4, .terminal h5, .terminal h6 {
+
+#uk_html .terminal h1,
+#uk_html .terminal h2,
+#uk_html .terminal h3,
+#uk_html .terminal h4,
+#uk_html .terminal h5,
+#uk_html .terminal h6 {
     line-height: 1.0em;
 }
+
+
 /*
 .cmd .mask {
     width: 10px;
@@ -16,7 +35,8 @@
     z-index: 100;
 }
 */
-.cmd .clipboard {
+
+#uk_html .cmd .clipboard {
     position: absolute;
     height: 16px;
     left: -6px;
@@ -29,7 +49,8 @@
     filter: alpha(opacity = 0.01);
     filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0.01);
     */
-    width: 5px; /* textarea need to have width or it will not work on Android */
+    width: 5px;
+    /* textarea need to have width or it will not work on Android */
     background: transparent;
     border: none;
     color: transparent;
@@ -39,83 +60,101 @@
     z-index: 0;
     overflow: hidden;
 }
-.terminal .error {
+
+#uk_html .terminal .error {
     color: #f00;
 }
-.terminal {
+
+#uk_html .terminal {
     padding: 10px;
     position: relative;
     /*overflow: hidden;*/
     overflow: auto;
 }
-.cmd {
+
+#uk_html .cmd {
     padding: 0;
     height: 1.5em;
     position: relative;
     /*margin-top: 3px; */
 }
-.terminal .inverted, .cmd .inverted, .cmd .cursor.blink {
+
+#uk_html .terminal .inverted,
+#uk_html .cmd .inverted,
+#uk_html .cmd .cursor.blink {
     background-color: #aaa;
     color: #000;
 }
-.cmd .cursor.blink {
+
+#uk_html .cmd .cursor.blink {
     -webkit-animation: terminal-blink 1s infinite steps(1, start);
-       -moz-animation: terminal-blink 1s infinite steps(1, start);
-        -ms-animation: terminal-blink 1s infinite steps(1, start);
-            animation: terminal-blink 1s infinite steps(1, start);
+    -moz-animation: terminal-blink 1s infinite steps(1, start);
+    -ms-animation: terminal-blink 1s infinite steps(1, start);
+    animation: terminal-blink 1s infinite steps(1, start);
 }
+
 @-webkit-keyframes terminal-blink {
-  0%, 100% {
-      background-color: #000;
-      color: #aaa;
-  }
-  50% {
-      background-color: #bbb;
-      color: #000;
-  }
+    0%,
+    100% {
+        background-color: #000;
+        color: #aaa;
+    }
+    50% {
+        background-color: #bbb;
+        color: #000;
+    }
 }
 
 @-ms-keyframes terminal-blink {
-  0%, 100% {
-      background-color: #000;
-      color: #aaa;
-  }
-  50% {
-      background-color: #bbb;
-      color: #000;
-  }
+    0%,
+    100% {
+        background-color: #000;
+        color: #aaa;
+    }
+    50% {
+        background-color: #bbb;
+        color: #000;
+    }
 }
 
 @-moz-keyframes terminal-blink {
-  0%, 100% {
-      background-color: #000;
-      color: #aaa;
-  }
-  50% {
-      background-color: #bbb;
-      color: #000;
-  }
-}
-@keyframes terminal-blink {
-  0%, 100% {
-      background-color: #000;
-      color: #aaa;
-  }
-  50% {
-      background-color: #bbb; /* not #aaa because it's seems there is Google Chrome bug */
-      color: #000;
-  }
+    0%,
+    100% {
+        background-color: #000;
+        color: #aaa;
+    }
+    50% {
+        background-color: #bbb;
+        color: #000;
+    }
 }
 
-.terminal .terminal-output div div, .cmd .prompt {
+@keyframes terminal-blink {
+    0%,
+    100% {
+        background-color: #000;
+        color: #aaa;
+    }
+    50% {
+        background-color: #bbb;
+        /* not #aaa because it's seems there is Google Chrome bug */
+        color: #000;
+    }
+}
+
+#uk_html .terminal .terminal-output div div,
+#uk_html .cmd .prompt {
     display: block;
     line-height: 18px;
     height: auto;
 }
-.cmd .prompt {
+
+#uk_html .cmd .prompt {
     float: left;
 }
-.terminal, .cmd {
+
+#uk_html .terminal,
+#uk_html .cmd {
     font-family: monospace;
     /*font-family: FreeMono, monospace; this don't work on Android */
     color: green;
@@ -123,21 +162,36 @@
     font-size: 15px;
     line-height: 18px;
 }
-.terminal-output > div {
+
+#uk_html .terminal-output>div {
     /*padding-top: 3px;*/
     min-height: 14px;
 }
-.terminal .terminal-output div span {
+
+#uk_html .terminal .terminal-output div span {
     display: inline-block;
 }
-.cmd span {
+
+#uk_html .cmd span {
     float: left;
     /*display: inline-block; */
 }
+
+
 /* fix double style of selecting text in terminal */
-.terminal-output span, .terminal-output a, .cmd div, .cmd span, .terminal td,
-.terminal pre, .terminal h1, .terminal h2, .terminal h3, .terminal h4,
-.terminal h5, .terminal h6 {
+
+#uk_html .terminal-output span,
+#uk_html .terminal-output a,
+#uk_html .cmd div,
+#uk_html .cmd span,
+#uk_html .terminal td,
+#uk_html .terminal pre,
+#uk_html .terminal h1,
+#uk_html .terminal h2,
+#uk_html .terminal h3,
+#uk_html .terminal h4,
+#uk_html .terminal h5,
+#uk_html .terminal h6 {
     -webkit-touch-callout: initial;
     -webkit-user-select: initial;
     -khtml-user-select: initial;
@@ -145,7 +199,10 @@
     -ms-user-select: initial;
     user-select: initial;
 }
-.terminal, .terminal-output, .terminal-output div {
+
+#uk_html .terminal,
+#uk_html .terminal-output,
+#uk_html .terminal-output div {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -153,9 +210,14 @@
     -ms-user-select: none;
     user-select: none;
 }
+
+
 /* firefox hack */
+
 @-moz-document url-prefix() {
-    .terminal, .terminal-output, .terminal-output div {
+    #uk_html .terminal,
+    #uk_html .terminal-output,
+    #uk_html .terminal-output div {
         -webkit-touch-callout: initial;
         -webkit-user-select: initial;
         -khtml-user-select: initial;
@@ -164,29 +226,34 @@
         user-select: initial;
     }
 }
-.terminal table {
+
+#uk_html .terminal table {
     border-collapse: collapse;
 }
-.terminal td {
+
+#uk_html .terminal td {
     border: 1px solid #aaa;
 }
-.terminal h1::-moz-selection,
-.terminal h2::-moz-selection,
-.terminal h3::-moz-selection,
-.terminal h4::-moz-selection,
-.terminal h5::-moz-selection,
-.terminal h6::-moz-selection,
-.terminal pre::-moz-selection,
-.terminal td::-moz-selection,
-.terminal .terminal-output div div::-moz-selection,
-.terminal .terminal-output div span::-moz-selection,
-.terminal .terminal-output div div a::-moz-selection,
-.cmd div::-moz-selection,
-.cmd > span::-moz-selection,
-.cmd .prompt span::-moz-selection {
+
+#uk_html .terminal h1::-moz-selection,
+#uk_html .terminal h2::-moz-selection,
+#uk_html .terminal h3::-moz-selection,
+#uk_html .terminal h4::-moz-selection,
+#uk_html .terminal h5::-moz-selection,
+#uk_html .terminal h6::-moz-selection,
+#uk_html .terminal pre::-moz-selection,
+#uk_html .terminal td::-moz-selection,
+#uk_html .terminal .terminal-output div div::-moz-selection,
+#uk_html .terminal .terminal-output div span::-moz-selection,
+#uk_html .terminal .terminal-output div div a::-moz-selection,
+#uk_html .cmd div::-moz-selection,
+#uk_html .cmd>span::-moz-selection,
+#uk_html .cmd .prompt span::-moz-selection {
     background-color: #aaa;
     color: #000;
 }
+
+
 /* this don't work in Chrome
 .terminal tr td::-moz-selection {
     border-color: #000;
@@ -195,39 +262,46 @@
     border-color: #000;
 }
 */
-.terminal h1::selection,
-.terminal h2::selection,
-.terminal h3::selection,
-.terminal h4::selection,
-.terminal h5::selection,
-.terminal h6::selection,
-.terminal pre::selection,
-.terminal td::selection,
-.terminal .terminal-output div div::selection,
-.terminal .terminal-output div div a::selection,
-.terminal .terminal-output div span::selection,
-.cmd div::selection,
-.cmd > span::selection,
-.cmd .prompt span::selection {
+
+#uk_html .terminal h1::selection,
+#uk_html .terminal h2::selection,
+#uk_html .terminal h3::selection,
+#uk_html .terminal h4::selection,
+#uk_html .terminal h5::selection,
+#uk_html .terminal h6::selection,
+#uk_html .terminal pre::selection,
+#uk_html .terminal td::selection,
+#uk_html .terminal .terminal-output div div::selection,
+#uk_html .terminal .terminal-output div div a::selection,
+#uk_html .terminal .terminal-output div span::selection,
+#uk_html .cmd div::selection,
+#uk_html .cmd>span::selection,
+#uk_html .cmd .prompt span::selection {
     background-color: #aaa;
     color: #000;
 }
-.terminal .terminal-output div.error, .terminal .terminal-output div.error div {
+
+#uk_html .terminal .terminal-output div.error,
+#uk_html .terminal .terminal-output div.error div {
     color: red;
 }
-.tilda {
+
+#uk_html .tilda {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1100;
 }
-.clear {
+
+#uk_html .clear {
     clear: both;
 }
-.terminal a {
+
+#uk_html .terminal a {
     color: #0F60FF;
 }
-.terminal a:hover {
+
+#uk_html .terminal a:hover {
     color: red;
 }

@@ -117,7 +117,7 @@ class Template {
                                         <script src="./js/levels/level11/jquery.terminal.min.js"></script>
                                         <script src="./js/levels/level11/terminal_cd.js"></script>
                                         <script src="./js/levels/level11/main.js"></script>';
-                        $levelCSSLinks = '<link href="./css/levels/level11/jquery.terminal.css" rel="stylesheet" />';
+                        $levelCSSLinks = '<link href="./css/levels/level11/jquery.terminal1.css" rel="stylesheet" />';
 
                 break;
             case '12':

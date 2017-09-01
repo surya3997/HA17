@@ -26,8 +26,8 @@
                                     <center>Online</center>
                                 </div>
                                 <div class="chat_body">
-                                    <div class="user">Group Chat</div>
-                                    <div class="user1">Private Chat</div>
+                                    <div class="user1">Millionaire</div>
+                                    <div class="user">Help Desk Chat</div>
                                 </div>
                             </div>
                         </div>
@@ -39,17 +39,17 @@
                             <div class="msg_wrap" style="height:425px">
                                 <div class="msg_body">
                                     <div class="msg_a">
-                                    <?php 
-                                            $sql = 'SELECT name FROM `ha_level` WHERE `id` = '.$this->getPage();
-                                            global $db;
-                                            $query = $db->query($sql);
-
-                                            $row = $db->result($query);
-                                            
-                                            echo $row->name;
-                                        ?>
+                                        This is a feature for you to ask any query related to the event.<br>
+                                        Use this feature effectively to ask valid queries or to report any bugs about the event<br>
+                                        DO NOT ask level hints here!<br>
+                                        DO NOT try to spam the inbox!<br>
+                                        Severe actions will be taken for spamming...<br>
                                     </div>
-                                    <div class="msg_b"> this is from a</div>
+                                    <div class="msg_a">
+                                        After filtering valid queries the response with the query message will be posted here, <br>
+                                        which could be publicly seen by all the users of Hack-a-Venture 2k17.<br>
+                                    </div>
+                                    <!-- <div class="msg_b"> this is from a</div> -->
                                     <div class="msg_insert"></div>
                                 </div>
                                 <div class="msg_footer" style="height:75px">
@@ -63,8 +63,17 @@
                             </div>
                             <div class="msg_wrap1" style="height:425px">
                                 <div class="msg_body1">
-                                    <div class="msg_a1">this is from a</div>
-                                    <div class="msg_b1"> this is from b</div>
+                                    <div class="msg_a1">I'll tell the tasks that you should complete through this chat.<br>Listen to my words clearly to avoid confusion about the mission...<br></div>
+                                    <div class="msg_b1">Yep... sure</div>
+                                    <div class="msg_a1">
+                                    <?php 
+                                            $sql = 'SELECT objective FROM `ha_level` where id = '.$this->getPage();
+                                            global $db;
+                                            $query = $db->query($sql);
+                                            $row = $db->result($query);
+                                            echo $row->objective;
+                                        ?>
+                                    </div>
                                     <div class="msg_insert1"></div>
                                 </div>
                                 <div class="msg_footer" style="height:75px">
@@ -87,6 +96,7 @@
     <!-- #content-wrapper -->
     </div>
     <!-- #wrapper -->
+    </div>
 
     <!-- jQuery -->
     <script src="js/general/jquery.js"></script>
@@ -127,6 +137,9 @@
     <script src="js/general/mbExtruder.js"></script>
 
     <!-- Custom JavaScript -->
+    
+    <script src="js/ammap.js"></script>
+    <script src="js/worldLow.js"></script>
     <script src="js/ha_general.js"></script>
     <script src="js/ha_tic_tac.js"></script>
     <script src="./js/leaderboard.js"></script>
@@ -134,8 +147,7 @@
     <script src="js/printTime.js"></script>
     <script src="js/ha_basetemplate.js"></script>
     <script src="./js/chat.js"></script>
-    <script src="js/ammap.js"></script>
-    <script src="js/worldLow.js"></script>
+    
 
     <!-- Level Specific JS file. Add dynamically. -->
     <?php $this->printVar('LEVEL_JS'); ?>
