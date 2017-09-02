@@ -101,6 +101,15 @@
     display: none;
 }
 
+
+/* 
+#legenddiv {
+    width: 700px;
+    margin-top: 10px;
+    position: relative;
+    display: none;
+} */
+
 #phone_div {
     width: 100%;
     height: 470px;

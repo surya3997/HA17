@@ -10,7 +10,7 @@
     $retStatus = array();
     $retStatus['status'] = ENUM_STATUS_OK;
     $retStatus['content'] = array();
-    
+    $retStatus['open'] = array();
 
     $sql = 'SELECT current_level FROM `ha_user` WHERE `id` = '.$user->getUserId();
     $query = $db->query($sql);
@@ -29,6 +29,16 @@
         //array_push($retStatus['level'], $template->getLevelId());
         while(($row = $db->result($query)) != NULL) {
             array_push($retStatus['content'], $row->level_id);
+        }
+        $db->freeResults($query);
+    }
+
+    $sql  = 'SELECT id FROM `ha_level` WHERE isImplemented = 1';
+    $query = $db->query($sql);
+    if($db->numRows($query) > 0)    {
+        //array_push($retStatus['level'], $template->getLevelId());
+        while(($row = $db->result($query)) != NULL) {
+            array_push($retStatus['open'], $row->id);
         }
         $db->freeResults($query);
     }

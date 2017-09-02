@@ -4,7 +4,7 @@ $.post('ajax/getMapData.php', {}, function(resp) {
     data = resp;
 });
 
-$('#pop_mobile').on('click', function() {
+function OpenPhone() {
     $('.wrap, #pop_mobile').toggleClass('active');
 
     var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
@@ -23,16 +23,13 @@ $('#pop_mobile').on('click', function() {
     var lines = [];
     var flights = [6, 7, 8, 9, 11];
 
-    /* $.post('ajax/getMapData.php', {}, function(data) { */
     var jsonData = JSON.parse(data);
     var out_places = jsonData["content"];
     for (var i = 0; i < out_places.length; i++) {
         level_completed.push(parseInt(out_places[i]) - 1);
     }
-    //console.log(level_completed);
     current_level = parseInt(jsonData["level"]) - 1;
 
-    //console.log(level_completed, current_level);
 
     for (var i = 0; i < places.length; i++) {
         if (current_level == i || level_completed.includes(i)) {
@@ -55,29 +52,41 @@ $('#pop_mobile').on('click', function() {
     }
 
     var put = [];
-    var implement = [0, 3, 10];
+    var implement = [];
+
+    var open_places = jsonData["open"];
+    for (var i = 0; i < open_places.length; i++) {
+        var postves = parseInt(open_places[i]) - 1
+        if (postves >= 0)
+            implement.push(postves);
+    }
+
+    //console.log(implement);
 
     for (var i = 0; i < places.length; i++) {
+        var putName = place_names[i];
         if (i != current_level) {
             put = [];
         }
         if (!implement.includes(i)) {
-            level_color = "#ffffff";
+            level_color = "#ffff00";
+            putName = 'Level not unlocked!';
         } else if (level_completed.includes(i)) {
             level_color = "#4a9e12";
+            putName = 'Level Completed';
         } else if (i == current_level) {
             put = lines;
             level_color = "#5f635c";
         } else if (flights.includes(i) && i != 7) {
             level_color = "#ff0000";
         } else {
-            level_color = "#000000";
+            level_color = "#0000ff";
         }
         insert_this = {
             "id": places[i],
             "color": level_color,
             "svgPath": targetSVG,
-            "title": place_names[i],
+            "title": putName,
             "latitude": lat[i],
             "longitude": long[i],
             "scale": 1.3,
@@ -122,6 +131,37 @@ $('#pop_mobile').on('click', function() {
             "unlistedAreasColor": "#8dd9ef"
         },
 
+        "legend": {
+            "width": 400,
+            "backgroundAlpha": 1,
+            "backgroundColor": "#fff",
+            "borderAlpha": 1,
+            "bottom": 15,
+            "right": 15,
+            "horizontalGap": 10,
+            "data": [{
+                "title": "Completed",
+                "color": "#4a9e12",
+                "markerType": "circle"
+            }, {
+                "title": "Current",
+                "color": "#5f635c",
+                "markerType": "circle"
+            }, {
+                "title": "Remaining",
+                "color": "#0000ff",
+                "markerType": "circle"
+            }, {
+                "title": "Important",
+                "color": "#ff0000",
+                "markerType": "circle"
+            }, {
+                "title": "Unopened",
+                "color": "#ffff00",
+                "markerType": "circle"
+            }]
+        },
+
         "imagesSettings": {
             "color": "#585869",
             "rollOverColor": "#585869",
@@ -148,11 +188,15 @@ $('#pop_mobile').on('click', function() {
         }
     });
 
+
     map.addListener("clickMapObject", function(event) {
         var index = places.indexOf(event.mapObject.id);
         var level = (index + 1).toString();
-        // console.log('Clicked level: ' + level);
-        window.location = "level.php?level=" + level;
+        if (level != 0)
+            window.location = "level.php?level=" + level;
     });
-    /* }); */
+}
+
+$('#pop_mobile').on('click', function() {
+    OpenPhone();
 });

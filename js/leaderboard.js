@@ -1,41 +1,47 @@
 (function($) {
-    var FakePoller = function(options, callback) {
+
+    var FakePoller = function(options, callback, levels, cnts) {
         var defaults = {
             frequency: 60,
-            limit: 6
+            limit: 12
         };
         this.callback = callback;
         this.config = $.extend(defaults, options);
-        this.list = [
-            'Game of Thrones',
-            'The Walking Dead',
-            'Survivor',
-            'Dead Like Me',
-            'Being Human',
-            'American Idol',
-            'X Factor',
-            'Firefly',
-            'SGU',
-            'Battlestar Galactica',
-            'Farscape',
-            'The Mentalist',
-            'True Blood',
-            'Dexter',
-            'Rick Astley'
-        ];
+
+        var place_names = ["India", "China", "Russia", "Malaysia", "Russia Komi-republic", "South Africa", "Argentina", "Brazil", "California", "Alabama", "UK", "Australia"];
+
+        this.list = [];
+        this.cnts = cnts;
+        for (var i = 0; i < levels.length; i++) {
+            this.list.push(place_names[parseInt(levels[i]) - 1]);
+        }
     }
     FakePoller.prototype.getData = function() {
+
+        var cnts = [];
+        var lvls = [];
         var results = [];
         for (var i = 0, len = this.list.length; i < len; i++) {
             results.push({
                 name: this.list[i],
-                count: rnd(0, 2000)
+                count: this.cnts[i]
             });
         }
+
         return results;
     };
+
+    change_flag = 0;
     FakePoller.prototype.processData = function() {
-        return this.sortData(this.getData()).slice(0, this.config.limit);
+        if (change_flag == 0 || this.list.length < this.config.limit) {
+            change_flag = 1;
+            var processed = this.sortData(this.getData()).slice(0, this.config.limit);
+            return processed;
+        } else {
+            change_flag = 0;
+            var processed = this.sortData(this.getData()).slice(this.config.limit, this.list.length);
+            return processed;
+        }
     };
 
     FakePoller.prototype.sortData = function(data) {
@@ -57,7 +63,7 @@
     };
     window.FakePoller = FakePoller;
 
-    var Leaderboard = function(elemId, options) {
+    var Leaderboard = function(elemId, options, levels, cnts) {
         var _this = this;
         var defaults = {
             limit: 6,
@@ -84,7 +90,7 @@
                 _this.data = data;
                 _this.list[0].$item.addClass('animate');
             }
-        });
+        }, levels, cnts);
 
         this.poller.start();
     };
@@ -93,6 +99,7 @@
         var _this = this;
         $ul.empty();
         this.list = [];
+        this.cnts = [];
 
         for (var i = 0; i < elemSize; i++) {
             var item = $('<li>')
@@ -139,8 +146,13 @@
     function numberFormat(num) {
         return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+
 })(jQuery);
 
 $(document).ready(function($) {
-    var myLeaderboard = new Leaderboard(".leaderboard_content", { limit: 6, frequency: 8 });
+    $.post('ajax/getLeaderboardCount.php', {}, function(resp) {
+        leader_data = JSON.parse(resp);
+        console.log(leader_data.level_id, leader_data.count);
+        var myLeaderboard = new Leaderboard(".leaderboard_content", { limit: 6, frequency: 12 }, leader_data.level_id, leader_data.count);
+    });
 });

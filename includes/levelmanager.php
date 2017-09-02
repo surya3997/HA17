@@ -33,6 +33,17 @@ class LevelManager {
             return false;
         }
         $db->freeResults($query);
+
+        $sql = 'SELECT isImplemented from ha_level WHERE id = '.$levelId;
+        $query = $db->query($sql);
+        if($db->numRows($query) == 0) {
+            return false;
+        }
+        $result = $db->result($query);
+        if($result->isImplemented != 1) {
+            return false;
+        }
+        $db->freeResults($query);
         return true;
     }
 

@@ -16,7 +16,7 @@
                         <div id="chartdiv"></div>
 
                         <div id='leaderboard'>
-                            <h1><span>Leader Board</span></h1>
+                            <h1><span>Levels completed by users</span></h1>
                             <div class="leaderboard_content"></div>
                         </div>
 
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="msg_box" style="display:none">
-                            <div class="msg_head">Messages
+                            <div class="msg_head">Help Desk Chat
                                 <div class="close" id="cl1">x</div>
                             </div>
                             <div class="msg_wrap" style="height:425px">
@@ -49,7 +49,6 @@
                                         After filtering valid queries the response with the query message will be posted here, <br>
                                         which could be publicly seen by all the users of Hack-a-Venture 2k17.<br>
                                     </div>
-                                    <!-- <div class="msg_b"> this is from a</div> -->
                                     <div class="msg_insert"></div>
                                 </div>
                                 <div class="msg_footer" style="height:75px">
@@ -58,7 +57,7 @@
                             </div>
                         </div>
                         <div class="msg_box1" style="display:none">
-                            <div class="msg_head1">Messages
+                            <div class="msg_head1">Millionaire
                                 <div class="close" id="cl2">x</div>
                             </div>
                             <div class="msg_wrap1" style="height:425px">
@@ -85,7 +84,7 @@
                         <div id="bottom_nav_bar">
                             <button class="btn button_justify" href="#" onclick="getBack()"><span class="fa fa-play"></span></button>
                             <button class="btn button_justify" href="#" onclick="getHome()"><span class="fa fa-circle"></span></button>
-                            <button class="btn button_justify" href="#"><span class="fa fa-square"></span></button>
+                            <button class="btn button_justify" href="#" onclick="getHome()"><span class="fa fa-square"></span></button>
                         </div>
                     </div>
                 </div>

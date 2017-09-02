@@ -54,7 +54,7 @@ class DB    {
         if($query = mysqli_query($this->con, $sqlQuery))    {
             return $query;
         } else {
-             die('SQL Error.'); //.$sqlQuery);
+             die('SQL Error.'.$sqlQuery);
         }
     }
     
