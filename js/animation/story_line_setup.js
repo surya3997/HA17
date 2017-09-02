@@ -213,6 +213,9 @@ AnimationFramework.prototype.PrepareSlider = function() {
     $('#ha-anim-slider-rightnav').on('click', function() {
         self.NextPage();
     });
+    $('#narrate_page').keyup(function() {
+        self.NextPage();
+    });
 }
 
 /**
@@ -516,7 +519,7 @@ AnimationPage.prototype.ShowAnimation = function(speed) {
 AnimationPage.prototype.TellStory = function(storyTeller, storyMessage) {
     /* $('#ha-anim-hero-speech').css({visibility: 'visible'}); */
     if (storyTeller.localeCompare("Hero") == 0) {
-        console.log('hero');
+        //console.log('hero');
         $('#ha-anim-hero-speech').animate({ opacity: 1 }, 200);
         //Start the typed thingy
         $('#ha-anim-speech-typed').typed({
@@ -527,7 +530,7 @@ AnimationPage.prototype.TellStory = function(storyTeller, storyMessage) {
             loopCount: false
         });
     } else {
-        console.log('heroine');
+        //console.log('heroine');
         $('#ha-anim-heroine-speech').animate({ opacity: 1 }, 200);
         //Start the typed thingy
         $('#ha-anim-heroine-speech-typed').typed({
@@ -586,6 +589,7 @@ AnimationPage.prototype.HideAnimation = function(speed) {
         if (elemAnimation.storyMode != undefined) {
             /* $('#ha-anim-hero-speech').css({visibility: 'hidden'}); */
             $('#ha-anim-hero-speech').animate({ opacity: 0 }, 300);
+            $('#ha-anim-heroine-speech').animate({ opacity: 0 }, 300);
         }
     }
     //Check for extra hide. These are elements that were brought up in the previous pages but remained to support this page

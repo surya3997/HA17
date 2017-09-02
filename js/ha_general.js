@@ -1,4 +1,257 @@
 /**
+ * Stuff to be executed once everything is loaded fully.
+ */
+$(document).ready(function() {
+
+    $("#help-pane-confirm-hint").css('opacity', '0');
+
+    $(function() {
+        var tWidth = $(window).height();
+        $("#ha-help-pane").buildMbExtruder({
+            position: "right",
+            width: 250,
+            flapDim: "100%",
+            textOrientation: "tb",
+            extruderOpacity: 1,
+            closeOnExternalClick: true,
+            top: 120,
+            onClose: function() {},
+            onContentLoad: function() {}
+        });
+
+        $("#ha-game-pane").buildMbExtruder({
+            position: "right",
+            width: 350,
+            flapDim: "100%",
+            textOrientation: "tb",
+            extruderOpacity: 1,
+            closeOnExternalClick: true,
+            top: (tWidth - 100),
+            onClose: function() {},
+            onContentLoad: function() {}
+        });
+
+        $('#endOfGameTimer').countdown("2017/09/21", function(event) {
+            var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+            $(this).html('Game ends in : ' + event.strftime(totalHours + ' Hrs %M Mins %S Secs'));
+        });
+        /**
+         * This is for the logout button in the Navigation bar
+         */
+        $("#LogoutUser").on('click', function() {
+            $.post('ajax/logout.php', {}, function(response) {
+                window.location = "index.php";
+            });
+        });
+
+        $('#ShowContact').on('click', function() {
+            InvokeCustomMessageDialog('<div style="text-align:center;font-size:1.5em;font-weight:bold;">Contact</div><br><div><span style="font-weight:bold;">Email : </span>hackaventure2k17@gmail.com</div><div><span style="font-weight:bold;"> Co-ordinator : </span>Surya Prasath S</div><div><span style="font-weight:bold"> Phone Number : </span>+91 97917 45977</div>');
+        });
+
+        $.post('ajax/getLastSeenAnnoun.php', {}, function(response) {
+            var jsonData = JSON.parse(response);
+            if (jsonData.status == EnumStatus.OK) {
+                if (jsonData.count == 0) {
+                    $('#announ_bell').removeClass('has_count_announ');
+                } else {
+                    $('.has_count_announ').attr('data-after', jsonData.count);
+                }
+            }
+        });
+
+        $('#announ_bell').on('click', function() {
+            var self = this;
+            $.post('ajax/getLastSeenAnnoun.php', { 'PUT': '' }, function(response) {
+                $(self).removeClass('has_count_announ');
+            });
+        });
+
+        /**
+         * Kicks the user out after a Session Expiration
+         */
+        $('#session-expired-page-redirect').dialog({
+            autoOpen: false,
+            width: 400,
+            height: 150,
+            modal: true,
+            close: function() {
+                document.location = 'index.php';
+            },
+            buttons: [{
+                text: "Ok",
+                click: function() {
+                    $(this).dialog("close");
+                }
+            }]
+        });
+
+        /**
+         * Shows a Dialog with custom message with a single button and an optional close handler.
+         */
+        $('#general-info-dialog').dialog({
+            autoOpen: false,
+            width: 450,
+            height: 250,
+            modal: true,
+            buttons: [{
+                text: "Ok",
+                click: function() {
+                    $(this).dialog("close");
+                }
+            }]
+        });
+
+
+        $.fn.changeLabel = function(text) {
+            $(this).find(".flapLabel").html(text);
+            $(this).find(".flapLabel").mbFlipText();
+        };
+
+        if (window.location.pathname.indexOf('index.php') != -1) { // Load the general information.
+            $('#ha-help-pane-content').html('Hello friend.<hr />Ask me if you are stuck at any point. I\'m good at solving problems.<br><br>And you know that when I am good at something, I can\'t do it for free!');
+        } else { ///Load the help for the particular stage
+            //Get the level id parameter from the url.
+            var levelIdDetails = GetCurrentLevelId();
+            if (levelIdDetails['status'] != EnumStatus.OK) {
+                //TODO this is too harsh. Clean this up a bit and make it look better.
+                window.location = 'index.php';
+            }
+            var level = levelIdDetails['level'];
+            $.post('ajax/levelhint.php', { level: level }, function(response) {
+                var jsonData = JSON.parse(response);
+                HandleAuthFailedStatus(jsonData.status);
+                if (jsonData.status == EnumStatus.OK) {
+                    LoadHelpBarContent(jsonData);
+                } else {
+                    //Illegal Level.
+                    InvokeCustomMessageDialog("This level is not open yet. Complete the prerequisite levels first.", function() {
+                        window.location = 'index.php';
+                    });
+                }
+            });
+        }
+    });
+
+    /**
+     * This is for the hints pane - get more hints confirm dialog
+     */
+    $('#help-pane-confirm-hint').dialog({
+        autoOpen: false,
+        modal: true,
+        width: 500,
+        height: 200,
+        resizable: false,
+        buttons: [{
+                text: "Confirm",
+                click: function() { //Sends out the get new hint dialog box.
+                    $(this).dialog("close");
+                    //Perform the required logic here.
+                    var levelIDResults = GetCurrentLevelId();
+                    //We need to make a confirmation dialog box here.
+                    if (levelIDResults['status'] == EnumStatus.OK) {
+                        var level = levelIDResults['level'];
+                        GetNextHint(level);
+                    } else {
+                        //This means that the level id is not there. Kick this guy out.
+                        InvokeCustomMessageDialog('Our navigation system seems to have drifted of course. Rerouting you to the last proper location.', function() {
+                            document.location = 'index.php';
+                        });
+                    }
+                    //We need to open the extruder since it gets closed on external click
+                    $('#ha-help-pane').openMbExtruder(true);
+                }
+            },
+            {
+                text: "Cancel",
+                click: function() {
+                    $(this).dialog("close");
+                }
+            }
+        ]
+    });
+    /**
+     * This is for the help pane's get more hints option.
+     */
+    $('#ha-help-pane').on('click', '#more-hints-button', function() {
+        //TODO Get an alert out first before proceeding with the hint purchase.
+        $("#help-pane-confirm-hint").css('opacity', '1');
+        $('#help-pane-confirm-hint').dialog("open");
+    });
+
+    /*
+     * This is for the ToolTip using Jquery UI 
+     */
+    $('[data-toggle="tooltip"]').tooltip({
+        show: {
+            effect: "slideDown",
+            delay: 50
+        }
+    });
+
+    /**
+     * This is for loading the announcements
+     */
+
+    $.post('ajax/getAnnouncements.php', {}, function(data) {
+        var jsonData = JSON.parse(data);
+        HandleAuthFailedStatus(jsonData.status);
+        if (jsonData.status == EnumStatus.OK) {
+            //Load it in.
+            var elemCount = jsonData.content.length;
+            var htmlData = '';
+            for (var elemIter = 0; elemIter < elemCount; elemIter++) {
+                htmlData += '<li class="message-preview"><a href="#"><div class="media"><div class="media-body">';
+                htmlData += '<h5 class="media-heading"><strong>Administrator says</strong></h5>';
+                htmlData += '<p>' + jsonData.content[elemIter].data + '</p>';
+                htmlData += '</div></div></a></li>';
+            }
+            $('#announcements').html(htmlData);
+        }
+    });
+
+
+
+    $('#go-fullscreen').click(function() {
+        // alert("now going to full screen");
+        DoFullScreen();
+    });
+
+    $('#watch-animation').click(function() {
+        window.location = 'animation.php?level=1';
+    });
+    var enable_full_screen = true;
+
+    function DoFullScreen() {
+        if (enable_full_screen) {
+            var docElm = document.documentElement;
+            var docElm = document.documentElement;
+            if (docElm.requestFullscreen) {
+                docElm.requestFullscreen();
+            } else if (docElm.mozRequestFullScreen) {
+                docElm.mozRequestFullScreen();
+            } else if (docElm.webkitRequestFullScreen) {
+                docElm.webkitRequestFullScreen();
+            } else if (docElm.msRequestFullscreen) {
+                docElm.msRequestFullscreen();
+            }
+            enable_full_screen = false;
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            enable_full_screen = true;
+        }
+    }
+});
+
+
+/**
  * This function is used to load the given content into the Help Bar.
  * 
  */
@@ -147,266 +400,3 @@ window.activityTrackerInterval = setInterval(function() {
 document.onmousemove = function() {
     window.activityTracker = new Date().getTime();
 }
-
-/**
- * Stuff to be executed once everything is loaded fully.
- */
-$(document).ready(function() {
-
-    $('#endOfGameTimer').countdown("2017/09/23", function(event) {
-        var totalHours = event.offset.totalDays * 24 + event.offset.hours;
-        $(this).html('Game ends in : ' + event.strftime(totalHours + ' Hrs %M Mins %S Secs'));
-    });
-    /**
-     * This is for the logout button in the Navigation bar
-     */
-    $("#LogoutUser").on('click', function() {
-        $.post('ajax/logout.php', {}, function(response) {
-            window.location = "index.php";
-        });
-    });
-
-    $('#ShowContact').on('click', function() {
-        InvokeCustomMessageDialog('<div style="text-align:center;font-size:1.5em;font-weight:bold;">Contact</div><br><div><span style="font-weight:bold;">Email : </span>hackaventure2k17@gmail.com</div><div><span style="font-weight:bold;"> Co-ordinator : </span>Surya Prasath S</div><div><span style="font-weight:bold"> Phone Number : </span>+91 97917 45977</div>');
-    });
-
-    $.post('ajax/getLastSeenAnnoun.php', {}, function(response) {
-        var jsonData = JSON.parse(response);
-        if (jsonData.status == EnumStatus.OK) {
-            if (jsonData.count == 0) {
-                $('#announ_bell').removeClass('has_count_announ');
-            } else {
-                $('.has_count_announ').attr('data-after', jsonData.count);
-            }
-        }
-    });
-
-    $('#announ_bell').on('click', function() {
-        var self = this;
-        $.post('ajax/getLastSeenAnnoun.php', { 'PUT': '' }, function(response) {
-            $(self).removeClass('has_count_announ');
-        });
-    });
-
-    /**
-     * Kicks the user out after a Session Expiration
-     */
-    $('#session-expired-page-redirect').dialog({
-        autoOpen: false,
-        width: 400,
-        height: 150,
-        modal: true,
-        close: function() {
-            document.location = 'index.php';
-        },
-        buttons: [{
-            text: "Ok",
-            click: function() {
-                $(this).dialog("close");
-            }
-        }]
-    });
-
-    /**
-     * Shows a Dialog with custom message with a single button and an optional close handler.
-     */
-    $('#general-info-dialog').dialog({
-        autoOpen: false,
-        width: 450,
-        height: 250,
-        modal: true,
-        buttons: [{
-            text: "Ok",
-            click: function() {
-                $(this).dialog("close");
-            }
-        }]
-    });
-
-    /**
-     * HelpBar Content Format (HTML)
-     * <ha-help-pane-content>
-     *  <stage-name> </stage-name>
-     *  <objective> </objective>
-     *  <hints> 
-     *  </hints>
-     *  <get-more-hints>
-     *  </get-more-hints>
-     * </ha-help-pane-content>
-     */
-
-    /**
-     * Loads the Help Pane using the MbExtruder
-     */
-    $(function() {
-        var tWidth = $(window).height();
-        $("#ha-help-pane").buildMbExtruder({
-            position: "right",
-            width: 250,
-            flapDim: "100%",
-            textOrientation: "tb",
-            extruderOpacity: 1,
-            closeOnExternalClick: true,
-            top: 120,
-            onClose: function() {},
-            onContentLoad: function() {}
-        });
-
-        $("#ha-game-pane").buildMbExtruder({
-            position: "right",
-            width: 350,
-            flapDim: "100%",
-            textOrientation: "tb",
-            extruderOpacity: 1,
-            closeOnExternalClick: true,
-            top: (tWidth - 100),
-            onClose: function() {},
-            onContentLoad: function() {}
-        });
-
-        $.fn.changeLabel = function(text) {
-            $(this).find(".flapLabel").html(text);
-            $(this).find(".flapLabel").mbFlipText();
-        };
-
-        if (window.location.pathname.indexOf('index.php') != -1) { // Load the general information.
-            $('#ha-help-pane-content').html('Hello friend.<hr />Ask me if you are stuck at any point. I\'m good at solving problems.<br><br>And you know that when I am good at something, I can\'t do it for free!');
-        } else { ///Load the help for the particular stage
-            //Get the level id parameter from the url.
-            var levelIdDetails = GetCurrentLevelId();
-            if (levelIdDetails['status'] != EnumStatus.OK) {
-                //TODO this is too harsh. Clean this up a bit and make it look better.
-                window.location = 'index.php';
-            }
-            var level = levelIdDetails['level'];
-            $.post('ajax/levelhint.php', { level: level }, function(response) {
-                var jsonData = JSON.parse(response);
-                HandleAuthFailedStatus(jsonData.status);
-                if (jsonData.status == EnumStatus.OK) {
-                    LoadHelpBarContent(jsonData);
-                } else {
-                    //Illegal Level.
-                    InvokeCustomMessageDialog("This level is not open yet. Complete the prerequisite levels first.", function() {
-                        window.location = 'index.php';
-                    });
-                }
-            });
-        }
-    });
-
-    /**
-     * This is for the hints pane - get more hints confirm dialog
-     */
-    $('#help-pane-confirm-hint').dialog({
-        autoOpen: false,
-        modal: true,
-        width: 500,
-        height: 200,
-        resizable: false,
-        buttons: [{
-                text: "Confirm",
-                click: function() { //Sends out the get new hint dialog box.
-                    $(this).dialog("close");
-                    //Perform the required logic here.
-                    var levelIDResults = GetCurrentLevelId();
-                    //We need to make a confirmation dialog box here.
-                    if (levelIDResults['status'] == EnumStatus.OK) {
-                        var level = levelIDResults['level'];
-                        GetNextHint(level);
-                    } else {
-                        //This means that the level id is not there. Kick this guy out.
-                        InvokeCustomMessageDialog('Our navigation system seems to have drifted of course. Rerouting you to the last proper location.', function() {
-                            document.location = 'index.php';
-                        });
-                    }
-                    //We need to open the extruder since it gets closed on external click
-                    $('#ha-help-pane').openMbExtruder(true);
-                }
-            },
-            {
-                text: "Cancel",
-                click: function() {
-                    $(this).dialog("close");
-                }
-            }
-        ]
-    });
-    /**
-     * This is for the help pane's get more hints option.
-     */
-    $('#ha-help-pane').on('click', '#more-hints-button', function() {
-        //TODO Get an alert out first before proceeding with the hint purchase.
-        $('#help-pane-confirm-hint').dialog("open");
-    });
-
-    /*
-     * This is for the ToolTip using Jquery UI 
-     */
-    $('[data-toggle="tooltip"]').tooltip({
-        show: {
-            effect: "slideDown",
-            delay: 50
-        }
-    });
-
-    /**
-     * This is for loading the announcements
-     */
-
-    $.post('ajax/getAnnouncements.php', {}, function(data) {
-        var jsonData = JSON.parse(data);
-        HandleAuthFailedStatus(jsonData.status);
-        if (jsonData.status == EnumStatus.OK) {
-            //Load it in.
-            var elemCount = jsonData.content.length;
-            var htmlData = '';
-            for (var elemIter = 0; elemIter < elemCount; elemIter++) {
-                htmlData += '<li class="message-preview"><a href="#"><div class="media"><div class="media-body">';
-                htmlData += '<h5 class="media-heading"><strong>Administrator says</strong></h5>';
-                htmlData += '<p>' + jsonData.content[elemIter].data + '</p>';
-                htmlData += '</div></div></a></li>';
-            }
-            $('#announcements').html(htmlData);
-        }
-    });
-
-
-
-    $('#go-fullscreen').click(function() {
-        // alert("now going to full screen");
-        DoFullScreen();
-    });
-
-    $('#watch-animation').click(function() {
-        window.location = 'animation.php?level=1';
-    });
-    var enable_full_screen = true;
-
-    function DoFullScreen() {
-        if (enable_full_screen) {
-            var docElm = document.documentElement;
-            var docElm = document.documentElement;
-            if (docElm.requestFullscreen) {
-                docElm.requestFullscreen();
-            } else if (docElm.mozRequestFullScreen) {
-                docElm.mozRequestFullScreen();
-            } else if (docElm.webkitRequestFullScreen) {
-                docElm.webkitRequestFullScreen();
-            } else if (docElm.msRequestFullscreen) {
-                docElm.msRequestFullscreen();
-            }
-            enable_full_screen = false;
-        } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.mozCancelFullScreen) {
-                document.mozCancelFullScreen();
-            } else if (document.webkitCancelFullScreen) {
-                document.webkitCancelFullScreen();
-            } else if (document.msExitFullscreen) {
-                document.msExitFullscreen();
-            }
-            enable_full_screen = true;
-        }
-    }
-});

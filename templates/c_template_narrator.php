@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">
 </head>
 
-<body>
+<body id="narrate_page">
     <div id="ha_anim_slider_container">
         <div id="ha-anim-slider-leftnav"><i class="fa fa-angle-left"></i></div>
         <div id="ha-anim-slider-pages">

@@ -140,8 +140,8 @@
     
     <script src="js/ammap.js"></script>
     <script src="js/worldLow.js"></script>
-    <script src="js/ha_general.js"></script>
     <script src="js/ha_tic_tac.js"></script>
+    <script src="js/ha_general.js"></script>
     <script src="./js/leaderboard.js"></script>
     <script src="js/map.js"></script>
     <script src="js/printTime.js"></script>

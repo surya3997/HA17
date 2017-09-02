@@ -70,14 +70,14 @@
             </div>
         </div>
 
-        <div id="session-expired-page-redirect" title="Session Expired">
+        <!-- <div id="session-expired-page-redirect" title="Session Expired">
             Session has expired. Please login again.
         </div>
         <div id="general-info-dialog" title="Information">
             <div id="general-info-dialog-content">
                 This is dummy information.
             </div>
-        </div>
+        </div> -->
         <div id="help-pane-confirm-hint" title="Confirmation for hint acquisition">
             You have initiated a hint acquisition. This is an irreversible process. You will lose points for each hint you purchase. Do you confirm ?
         </div>

@@ -61,6 +61,8 @@ function fn1() {
                 window.location = 'index.php';
             });
         } else {
+            closeFn();
+            closeFn1();
             InvokeCustomMessageDialog("Access Denied.");
         }
     });

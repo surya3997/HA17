@@ -117,6 +117,15 @@ ul.alert-dropdown {
  * Styles required for the content loaded inside the help bot.
  */
 
+#ha-help-pane,
+#ha-game-pane {
+    opacity: 0;
+}
+
+#help-pane-confirm-hint {
+    opacity: 0;
+}
+
 #ha-help-pane-content .loading-image {
     width: 32px;
     margin: 0 auto;

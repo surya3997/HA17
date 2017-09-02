@@ -120,6 +120,7 @@ page2Story.SetAnimations([{
             x: '0%',
             y: '-=190'
         },
+        // initDelay: 10,
         hideLocation: EnumAnimationHide.RIGHT_HIDE,
         storyMode: "I want you to exploit the systems of my competitors and crash them.I can fix a deal of certain cryptocurrencies!",
         storyTeller: "Heroine"
@@ -132,7 +133,7 @@ page2Story.SetAnimations([{
             x: '10%',
             y: '-=250'
         }
-        //,        hideLocation: EnumAnimationHide.LEFT_HIDE
+        // ,        hideLocation: EnumAnimationHide.LEFT_HIDE
     },
     {
         element: 'millionaire',
@@ -142,7 +143,7 @@ page2Story.SetAnimations([{
             x: '80%',
             y: '-=250'
         }
-        //,hideLocation: EnumAnimationHide.TOP_HIDE
+        // ,        hideLocation: EnumAnimationHide.LEFT_HIDE
     }
 ]);
 
@@ -211,7 +212,7 @@ page5.SetAnimations([{
         y: '-=190'
     },
     hideLocation: EnumAnimationHide.RIGHT_HIDE,
-    storyMode: "No worry!!Deal is fixed... We'll communicate through a secret messaging app. Let the cyberwar begin!!",
+    storyMode: "No worry!!Deal is fixed... We'll communicate through a secret messaging app!!",
     storyTeller: "Hero"
 }]);
 
