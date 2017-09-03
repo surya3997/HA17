@@ -1,7 +1,7 @@
 function getMap() {
     document.getElementById("phone_div").style.display = "none";
     document.getElementById("chartdiv").style.display = "block";
-
+    OpenMap();
 }
 
 function getHome() {
