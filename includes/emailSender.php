@@ -1,6 +1,8 @@
 <?php 
+include_once "phpmailer_folder/PHPMailer.php";
+include_once "phpmailer_folder/SMTP.php";
 
-include_once 'phpmailer_folder/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
 
 class EmailSender {
     private $mToId;
@@ -31,7 +33,7 @@ class EmailSender {
         // 0 = off (for production use)
         // 1 = client messages
         // 2 = client and server messages
-        $mail->SMTPDebug = 0;
+        $mail->SMTPDebug = 2;
 
         //Ask for HTML-friendly debug output
         //$mail->Debugoutput = 'html';
