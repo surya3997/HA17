@@ -15,7 +15,7 @@ function openHelpDesk() {
     back_flag = 1;
     $.post('ajax/getResponses.php', {}, function(resp) {
         var data = JSON.parse(resp);
-        console.log(data);
+        //console.log(data);
         for (var i = 0; i < data.query.length; i++) {
             $("<div class='msg_b'>SOMEONE ASKED : " + data.query[i] + "</div>").insertBefore('.msg_insert');
             $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);

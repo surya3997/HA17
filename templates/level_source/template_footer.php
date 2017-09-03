@@ -20,6 +20,10 @@
                             <div class="leaderboard_content"></div>
                         </div>
 
+                        <div id="wallet">
+                            
+                        </div>
+
                         <div id="chat" style="display:none">
                             <div class="chat_box">
                                 <div class="chat_head">

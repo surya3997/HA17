@@ -41,14 +41,14 @@ directoryLs.push('bin\tetc\troot\tNetwork\tOS\tHack-a-Venture.log');
 directoryLs.push('hello.txt\tNetwork.py\tNetwork.log');
 directoryLs.push('hello.txt\tOS.py\tOS.log');
 var directoryL = [];
-directoryL.push('dr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tbin\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tetc\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS');
-directoryL.push('-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork.py');
-directoryL.push('-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS.py');
+directoryL.push('----------\t4\troot\troot\t1240\tJan 15 08:12\tbin\n----------\t4\troot\troot\t1240\tJan 15 08:12\tetc\n----------\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tOS');
+directoryL.push('-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\tNetwork.py');
+directoryL.push('-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\tOS.py');
 var directoryLa = [];
-directoryLa.push('dr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tbin\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tetc\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tHack-a-Venture.log');
+directoryLa.push('d---------\t4\troot\troot\t1240\tJan 15 08:12\tbin\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tetc\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tHack-a-Venture.log');
 directoryLa.push('-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork.py\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tNetwork.log');
 directoryLa.push('-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS.py\n-r--r--r--\t4\troot\troot\t1240\tJan 15 08:12\tOS.log');
-var manHelp = ("Use one of the following commands:\n\tclear .... clear the terminal\n\tdate  ..... display date \n\thelp ..... show how to use a command\n\tls   ..... st the files in the current directory\n\tcd   ..... change directory\n\tcat  ..... contenate into a file\n\thead ..... show the first specified number of lines\n\ttail ..... show the last specified number of lines\n\tman  ..... page for how to use commands\n\tsudo  ..... superuser previlages ");
+var manHelp = ("Use one of the following commands:\n\tclear .... clear the terminal\n\tdate  ..... display date \n\thelp ..... show how to use a command\n\tls   ..... list the files in the current directory\n\tcd   ..... change directory\n\tcat  ..... concatenate into a file\n\thead ..... show the first specified number of lines\n\ttail ..... show the last specified number of lines\n\tman  ..... page for how to use commands\n\tsudo  ..... superuser previlages ");
 var clearHelp = "\n\tclear - clear the terminal screen\n\n\n";
 var lsHelp = "\n\tls - list directory contents\n\nUsage:\tls [OPTION]... [FILE]...\n\n\nOptions:\n\n\t-a, --all\n\t\t\t\tdo not hide entries starting with .\n\t-A, --almost-all\n\t\t\t\tdo not list implied . and ..\n\t-d, --directory\n\t\t\t\tlist directory entries instead of contents, and do not  dereference symbolic links\n\t--help display this help and exit\n\n\n";
 var cdHelp = "\n\tcd - change directory\n\nUsage:\t cd [DIRECTORY]\n\n\n";
@@ -155,10 +155,43 @@ jQuery(document).ready(function($) {
                                 monthVal = time1.getMonth() - time.getMonth();
                                 yearVal = time1.getYear() - time.getYear();
 
+                                var levelId = GetCurrentLevelId()['level'];
+                                var answer = 'a';
+                                $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
+                                    var jsonData = JSON.parse(data);
+                                    if (jsonData.status == EnumStatus.OK) {
+                                        InvokeCustomMessageDialog("You have cleared the level.", function() {
+                                            window.location = 'index.php';
+                                        });
+                                    } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
+                                        InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
+                                            window.location = 'index.php';
+                                        });
+                                    } else {
+                                        InvokeCustomMessageDialog("Access Denied.");
+                                    }
+
+                                });
                                 hrsVal = time1.getHours() - time.getHours();
                                 minVal = time1.getMinutes() - time.getMinutes();
                                 secVal = time1.getSeconds() - time.getSeconds();
+                                var levelId = GetCurrentLevelId()['level'];
+                                var answer = 'a';
+                                $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
+                                    var jsonData = JSON.parse(data);
+                                    if (jsonData.status == EnumStatus.OK) {
+                                        InvokeCustomMessageDialog("You have cleared the level.", function() {
+                                            window.location = 'index.php';
+                                        });
+                                    } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
+                                        InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
+                                            window.location = 'index.php';
+                                        });
+                                    } else {
+                                        InvokeCustomMessageDialog("Access Denied.");
+                                    }
 
+                                });
                                 if (flag == 1) {
                                     monthVal = monthVal + 1;
                                     dateVal = dateVal - 1;

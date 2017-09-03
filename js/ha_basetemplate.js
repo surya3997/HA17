@@ -15,7 +15,7 @@ function getHome() {
 }
 
 function getBack() {
-    console.log(back_flag);
+    //console.log(back_flag);
     if (back_flag == 0) {
         getHome();
     } else if (back_flag == 1) {

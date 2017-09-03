@@ -1,6 +1,6 @@
 $.post('ajax/getleveldata.php', { level: '1', dataKey: 'level_question' }, function(data) {
     var jsonData = JSON.parse(data);
-    console.log(jsonData);
+    //console.log(jsonData);
 
     if (jsonData["status"]) {
         var username = jsonData["dataValue"];
