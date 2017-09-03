@@ -7,6 +7,7 @@ $(document).ready(function() {
         $('#xs-menu').toggleClass('visible-xs').toggleClass('hidden-xs');
         $('#btnShow').toggle();
     });
+
 });
 
 function fn() {
@@ -14,14 +15,16 @@ function fn() {
 }
 
 function verify() {
-    var typed = document.getElementById('remove').value;
-    if (typed == 'oxymoron') {
+    var name = document.getElementById('fbusername').value;
+    var pwd = document.getElementById('fbpassword').value;
+
+    if (name == 'sudhir') {
         var levelId = GetCurrentLevelId()['level'];
-        var answer = 'a';
-        $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
+
+        $.post('ajax/levelcompletion.php', { level: levelId, answer: pwd }, function(data) {
             var jsonData = JSON.parse(data);
             if (jsonData.status == EnumStatus.OK) {
-                InvokeCustomMessageDialog("You have cleared the level.", function() {
+                InvokeCustomMessageDialog("You have Logged in to the account and removed the comment. Level cleared successfully!", function() {
                     window.location = 'index.php';
                 });
             } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
@@ -33,8 +36,9 @@ function verify() {
             }
 
         });
-        alert("passed the level");
     } else {
-        alert("try again");
+        InvokeCustomMessageDialog("Access Denied.");
     }
+
+
 }

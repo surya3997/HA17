@@ -14,14 +14,14 @@
                         <a class="navbar-brand logo">f</a>
                     </div>
                     <nav class="collapse navbar-collapse" role="navigation">
-                        <form class="navbar-form navbar-left">
+                        <div class="navbar-form navbar-left">
                             <div class="input-group input-group-sm" style="max-width:360px;">
                                 <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                    <button onclick='#' href='#' class="btn btn-default" ><i class="glyphicon glyphicon-search" href="#"></i></button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
                         <ul class="nav navbar-nav" style="margin-left: 10%;">
                             <li>
                                 <a href="#"><i class="glyphicon glyphicon-home"></i> Home</a>
@@ -30,21 +30,9 @@
                                 <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
                             </li>
                             <li>
-                                <a href="#"><span class="badge">badge</span></a>
+                                <a href="#postModal2" role="button" data-toggle="modal"><span class="badge">Log Out</span></a>
                             </li>
                         </ul>
-                         <!-- <ul class="nav navbar-nav navbar-right">
-                           <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" id='drdown' data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="">More</a></li>
-                                    <li><a href="">More</a></li>
-                                    <li><a href="">More</a></li>
-                                    <li><a href="">More</a></li>
-                                    <li><a href="">More</a></li>
-                                </ul>
-                            </li> 
-                        </ul>-->
                     </nav>
                 </div>
                 <div class="padding">
@@ -74,19 +62,19 @@
                                             <p></p>
                                             <p><textarea id="remove" onfocus="fn()" value="Remove the Comment" style="background-color: #e7e7e7;color:gray;width: 93%;margin-left: 0%;border-radius: 4%;/* height: 10%; */">Type The Comment!    </textarea></p>
                                         </p>
-                                        <button type="button" class='btn' onclick="verify()">post</button>
+                                        <button type="button" class='btn' >post</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--password is oxymoron-->
+                <!-- Sudhir's password is  <?php $this->printVar('level_question'); ?>. -->
                 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button> Update Status
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button> Update Status
                             </div>
                             <div class="modal-body">
                                 <form class="form center-block">
@@ -108,6 +96,31 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="postModal2" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button> Login
+                            </div>
+                            <div class="modal-body">
+                                <form id="form_id" method="post" name="myform">
+                                    <label>User Name :</label>
+                                    <input type="text" name="username" id="fbusername" />
+                                    <label>Password :</label>
+                                    <input type="password" name="password" id="fbpassword" />
+                                    <!-- <input type="button" value="Login" id="submit" onclick="verify()" /> -->
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <div>
+                                    <button class="btn btn-primary btn-sm" onclick="verify()" data-dismiss="modal" aria-hidden="true">Login</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

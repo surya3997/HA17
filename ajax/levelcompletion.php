@@ -30,9 +30,17 @@
             break;
 
         case '4':
-            LevelCompletionManager::LogCompletionAttempt('4');
-            $completeStatus = LevelCompletionManager::CompleteLevel('4');
-            $result['status'] = $completeStatus['status'];
+            $answer = clean($_REQUEST['answer']);
+            $levelDataMgr = new LevelDataManager('4');
+            LevelCompletionManager::LogCompletionAttempt('4', $answer);
+
+            if($answer == $levelDataMgr->GetData('level_solution')) {
+                //Add a complete query in here.
+                $completeStatus = LevelCompletionManager::CompleteLevel('4');
+                $result['status'] = $completeStatus['status'];
+            } else {
+                $result['status'] = ENUM_STATUS_FAILED;
+            }
             break;
 
         case '11':

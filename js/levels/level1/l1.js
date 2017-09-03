@@ -1,6 +1,5 @@
 $.post('ajax/getleveldata.php', { level: '1', dataKey: 'level_question' }, function(data) {
     var jsonData = JSON.parse(data);
-    //console.log(jsonData);
 
     if (jsonData["status"]) {
         var username = jsonData["dataValue"];
@@ -43,11 +42,9 @@ function fn1() {
     var answer = document.getElementById('pass').value;
 
     var levelId = GetCurrentLevelId()['level'];
-    //console.log(answer, levelId);
 
     $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
         var jsonData = JSON.parse(data);
-        //console.log(jsonData);
         if (jsonData.status == EnumStatus.OK) {
             closeFn();
             closeFn1();
@@ -67,9 +64,4 @@ function fn1() {
         }
     });
 
-    /* if (toCheck == password[clickedOne]) {
-        alert("success");
-    } else {
-        alert("try again");
-    } */
 }

@@ -122,6 +122,10 @@ ul.alert-dropdown {
     opacity: 0;
 }
 
+#hackaventure_logo {
+    height: 150px;
+}
+
 #help-pane-confirm-hint {
     opacity: 0;
 }

@@ -60,7 +60,7 @@
         <div id="ha-help-pane" class="{title:'Ask for Help'}">
             <div class="content">
                 <div id="ha-robot-avatar-image">
-                    <img src="res/images/hackaventure_150x150.png" />
+                    <img src="res/images/hackaventure_150x150.png" id="hackaventure_logo"/>
                 </div>
                 <div id="ha-help-pane-content">
                     <div class="loading-image">

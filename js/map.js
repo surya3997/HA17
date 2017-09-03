@@ -68,12 +68,15 @@ function OpenPhone() {
         if (i != current_level) {
             put = [];
         }
+        clickable = true;
         if (!implement.includes(i)) {
             level_color = "#ffff00";
             putName = 'Level not unlocked!';
+            clickable = false;
         } else if (level_completed.includes(i)) {
             level_color = "#4a9e12";
             putName = 'Level Completed';
+            clickable = false;
         } else if (i == current_level) {
             put = lines;
             level_color = "#5f635c";
@@ -93,7 +96,8 @@ function OpenPhone() {
             "zoomLevel": 0.75,
             "zoomLongitude": zoomlong[i],
             "zoomLatitude": zoomlat[i],
-            "lines": put
+            "lines": put,
+            "selectable": clickable
         };
         location_targets.push(insert_this);
     }
