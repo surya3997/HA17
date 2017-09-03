@@ -61,14 +61,18 @@ $(document).ready(function() {
 
     document.getElementById('resend_form').onsubmit = function() {
         var username = $('#activ_name').val();
-        var password = $('#activ_code').val();
+        var clg_code = $('#activ_code').val();
 
-        $.post('ajax/resend_activation.php', { username: username, password: password }, function(response) {
+        $.post('ajax/resend_activation.php', { username: username, clg_code: clg_code }, function(response) {
             var jsonResult = JSON.parse(response);
             if (jsonResult.status == 'OK') {
+                alert("Activation mail has been sent. Please check your Inbox and spam folders.")
+                window.location = 'login.php';
+            } else if (jsonResult.status == 'ILLEGAL') {
+                alert('Your email id is already activated.')
                 window.location = 'login.php';
             } else {
-                InvokeCustomMessageDialog(jsonResult.status);
+                alert("Invalid request.")
                 $('#activ_name').val('');
                 $('#activ_code').val('');
             }

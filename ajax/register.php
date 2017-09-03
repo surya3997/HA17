@@ -74,7 +74,7 @@
 
     //Send the activation mail to the user.
     $activationCodeSafe = urlencode($activationLink);
-    $activationMailBody = "Hi {$firstName},<br />Thank you for Registering for Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
+    $activationMailBody = "Hi {$firstName},<br />Thank you for registering in Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
     $activationMailSender = new EmailSender($email, $activationMailBody);
     $activationMailSender->SendMail();
 

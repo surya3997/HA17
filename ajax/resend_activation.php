@@ -4,7 +4,7 @@
     $jsonMessage = array();
 
     $email = strtolower(clean($_POST['username']));
-    $code = strtolower(clean($_POST['password']));
+    $code = strtolower(clean($_POST['clg_code']));
 
     $sql = 'SELECT `activation_link`, `name` 
             FROM '.DBT_USER.'
@@ -22,7 +22,7 @@
         //Send the activation mail to the user.
         $activationCodeSafe = urlencode($result->activation_link);
         $firstName = urlencode($result->name);
-        $activationMailBody = "Hi {$firstName},<br />Thank you for Registering for Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
+        $activationMailBody = "Hi {$firstName},<br />Thank you for registering in Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
         $activationMailSender = new EmailSender($email, $activationMailBody);
         $activationMailSender->SendMail();
         die(json_encode(array('status' => ENUM_STATUS_OK)));

@@ -10,16 +10,25 @@ and open the template in the editor.
     <title>Registration</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
     <link rel='stylesheet prefetch' href='./css/general/opensans.css'>
     <link rel="stylesheet" href="./css/general/bootstrap.min.css">
     <script src="./js/general/jquery.min.js"></script>
-
     <link rel="stylesheet" href="css/register.css">
 
 </head>
 
 <body id="register">
     <div class="container" style="height:90%">
+        <div class="preload_splash" id="preload_splash">
+            <div class="logo_splash">
+                <span style="color: darkturquoise;">Content </span>Loading
+            </div>
+            <div class="loader-frame_splash">
+                <div class="loader1_splash" id="loader1_splash"></div>
+                <div class="loader2_splash" id="loader2_splash"></div>
+            </div>
+        </div>
         <div class="reg_wrap">
             <div class="transbox">
                 <div class="reg-html">
@@ -50,11 +59,11 @@ and open the template in the editor.
                                     <input type="text" class="form-control form-horizontal" id="a_lname" placeholder="Last Name"></br>
                                     <label>COURSE*</label>
                                     <select class="form-control form-horizontal" id="course" style="font-size: 18px;">
-											<option value="mca">MCA</option>
-											<option value="msc_app">MSc Applied Mathemetics</option>
-											<option value="msc_swe">MSc Software Engineering</option>
-											<option value="msc_tcs">MSc Theoretical Computer Science</option>
-									</select><br>
+                                            <option value="mca">MCA</option>
+                                            <option value="msc_app">MSc Applied Mathemetics</option>
+                                            <option value="msc_swe">MSc Software Engineering</option>
+                                            <option value="msc_tcs">MSc Theoretical Computer Science</option>
+                                    </select><br>
                                     <input type="text" class="form-control form-horizontal" id="year" placeholder="Year of Graduation*"></br>
                                     <input type="text" class="form-control form-horizontal" id="a_contact" placeholder="Contact Number*"></br>
                                     <input type="text" class="form-control form-horizontal" id="a_email" placeholder="Email Address*"></br>

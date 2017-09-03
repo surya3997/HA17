@@ -1,6 +1,7 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
     <link href="css/animation/story_line.css" rel="stylesheet" />
     <link href="css/animation/slider.css" rel="stylesheet" />
     <link rel="stylesheet" href="res/font-awesome/css/font-awesome.min.css">

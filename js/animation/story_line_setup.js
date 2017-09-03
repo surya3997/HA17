@@ -96,7 +96,7 @@ function GetCurrentLevelId() {
         var levelStart = window.location.search.indexOf('level=') + 6;
         if (levelStart == -1) {
             alert('Invalid location. Rerouting packets. Please hold.');
-            window.location = 'index.php';
+            window.location = 'level.php?level=1';
         }
         var levelEnd = window.location.search.indexOf('&', levelStart);
         if (levelEnd == -1) { //This is the last parameter. Keep the end as the end of the string
@@ -127,10 +127,10 @@ AnimationFramework.prototype.NextPage = function() {
         if (this.mCurrentPage == (this.mAnimationPageList.length)) {
             //No more pages to load. 
             //TODO Come up with a better way to tell the story. Prompt for level entry.
-            console.log('Reached the end of the story.');
+            //console.log('Reached the end of the story.');
             this.mCurrentPage = AnimationFramework.EndPage;
             //TODO This is to redirect the user to the level page.
-            window.location = 'index.php' /* + GetCurrentLevelId()['level'] */ ;
+            window.location = 'level.php?level=' + GetCurrentLevelId()['level'];
             return;
         }
         this.mCurrentPage += 1;

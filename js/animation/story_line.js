@@ -178,7 +178,7 @@ page4.SetAnimations([{
         y: '-=190'
     },
     hideLocation: EnumAnimationHide.RIGHT_HIDE,
-    storyMode: "If you complete a task successfully,then credit will be added to your account..",
+    storyMode: "If you complete a task successfully,then your reward will be credited to your account..",
     storyTeller: "Heroine"
 }]);
 

@@ -43,7 +43,7 @@ function fn1() {
     var answer = document.getElementById('pass').value;
 
     var levelId = GetCurrentLevelId()['level'];
-    console.log(answer, levelId);
+    //console.log(answer, levelId);
 
     $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
         var jsonData = JSON.parse(data);

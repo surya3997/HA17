@@ -152,7 +152,6 @@
 $(document).ready(function($) {
     $.post('ajax/getLeaderboardCount.php', {}, function(resp) {
         leader_data = JSON.parse(resp);
-        console.log(leader_data.level_id, leader_data.count);
         var myLeaderboard = new Leaderboard(".leaderboard_content", { limit: 6, frequency: 12 }, leader_data.level_id, leader_data.count);
     });
 });
