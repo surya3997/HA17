@@ -65,12 +65,14 @@ function OpenPhone() {
 
     for (var i = 0; i < places.length; i++) {
         var putName = place_names[i];
+        var select = true;
         if (i != current_level) {
             put = [];
         }
         if (!implement.includes(i)) {
             level_color = "#ffff00";
             putName = 'Level not unlocked!';
+            select = false;
         } else if (level_completed.includes(i)) {
             level_color = "#4a9e12";
             putName = 'Level Completed';
@@ -93,7 +95,8 @@ function OpenPhone() {
             "zoomLevel": 0.75,
             "zoomLongitude": zoomlong[i],
             "zoomLatitude": zoomlat[i],
-            "lines": put
+            "lines": put,
+            "selectable": select
         };
         location_targets.push(insert_this);
     }
@@ -101,20 +104,6 @@ function OpenPhone() {
     map = AmCharts.makeChart("chartdiv", {
         "type": "map",
         "theme": "none",
-
-        "lines": [{
-            "id": "line1",
-            "arc": -0.85,
-            "alpha": 0.3,
-            "latitudes": [48.8567, 43.8163],
-            "longitudes": [2.3510, -79.4287]
-        }, {
-            "id": "line2",
-            "alpha": 0,
-            "color": "#000000",
-            "latitudes": [48.8567, 43.8163],
-            "longitudes": [2.3510, -79.4287]
-        }],
 
         "dataProvider": {
             "map": "worldLow",
@@ -192,7 +181,7 @@ function OpenPhone() {
     map.addListener("clickMapObject", function(event) {
         var index = places.indexOf(event.mapObject.id);
         var level = (index + 1).toString();
-        if (level != 0)
+        if (level != 0 && event.mapObject.selectable)
             window.location = "level.php?level=" + level;
     });
 }
