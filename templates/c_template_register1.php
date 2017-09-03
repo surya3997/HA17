@@ -10,6 +10,7 @@ and open the template in the editor.
     <title>Registration</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
     <link rel='stylesheet prefetch' href='./css/general/opensans.css'>
     <link rel="stylesheet" href="./css/general/bootstrap.min.css">
     <script src="./js/general/jquery.min.js"></script>

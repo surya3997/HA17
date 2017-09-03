@@ -56,7 +56,7 @@ class LevelManager {
         //Get the Cost of the next hint. 
         $sql = 'SELECT `pts_reduction`
                 FROM '.DBT_LEVEL_HINTS.'
-                WHERE `level_id` = \''.$level.'\''.
+                WHERE `level_id` = \''.$level.'\'';
                     /* 'AND `hint_index` > (
                         SELECT MAX(`hint_index`)
                         FROM '.DBT_USER_HINTS.'

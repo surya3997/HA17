@@ -8,7 +8,7 @@
                             <div class="container">
                                 <img id="img1" src="./res/images/map.png" onclick="getMap();"></img>
                                 <img id="img2" src="./res/images/linkedin.png" onclick="lbrd()"></img>
-                                <img id="img3" src="./res/images/Quora.png"></img>
+                                <img id="img3" src="./res/images/Quora.png" onclick="wallet()"></img>
                                 <img id="img4" src="./res/images/whatsapp.png" onclick="chat()"></img>
                             </div>
                         </div>
@@ -20,8 +20,10 @@
                             <div class="leaderboard_content"></div>
                         </div>
 
-                        <div id="wallet">
-                            
+                        <div id="wallet" style="display:none">
+                        <h1><span>REMAINING BALANCE IN YOUR CRYPTO-CURRENCY ACCOUNT</span></h1>
+                            <img id="bit_coin_img" src="./res/images/bcoin.ico"></img>
+                            <div class="wallet_content"></div>
                         </div>
 
                         <div id="chat" style="display:none">

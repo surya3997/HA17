@@ -26,6 +26,30 @@ body {
     min-width: 300px;
 }
 
+#wallet {
+    position: relative;
+    width: 100%;
+    height: 470px;
+    display: none;
+    max-width: 960px;
+    min-width: 400px;
+    padding: 3%;
+}
+
+#wallet h1 {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0;
+    color: #000000;
+}
+
+.wallet_content {
+    position: relative;
+    width: 100%;
+    margin: 3px auto 0 auto;
+    min-width: 300px;
+}
+
 .leaderboard_content ul {
     margin: 0;
     padding: 0;

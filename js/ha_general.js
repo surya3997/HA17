@@ -117,7 +117,7 @@ $(document).ready(function() {
                 window.location = 'index.php';
             }
             var level = levelIdDetails['level'];
-            $.post('ajax/levelhint.php', { level: level }, function(response) {
+            /* $.post('ajax/levelhint.php', { level: level }, function(response) {
                 var jsonData = JSON.parse(response);
                 HandleAuthFailedStatus(jsonData.status);
                 if (jsonData.status == EnumStatus.OK) {
@@ -128,7 +128,7 @@ $(document).ready(function() {
                         window.location = 'index.php';
                     });
                 }
-            });
+            }); */
         }
     });
 

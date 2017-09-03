@@ -11,11 +11,11 @@ function getHome() {
     document.getElementById("phone_div").style.display = "block";
     document.getElementById("chartdiv").style.display = "none";
     document.getElementById("chat").style.display = "none";
+    document.getElementById("wallet").style.display = "none";
     document.getElementById("leaderboard").style.display = "none";
 }
 
 function getBack() {
-    //console.log(back_flag);
     if (back_flag == 0) {
         getHome();
     } else if (back_flag == 1) {
@@ -33,4 +33,9 @@ function chat() {
 function lbrd() {
     document.getElementById("phone_div").style.display = "none";
     document.getElementById("leaderboard").style.display = "block";
+}
+
+function wallet() {
+    document.getElementById("phone_div").style.display = "none";
+    document.getElementById("wallet").style.display = "block";
 }

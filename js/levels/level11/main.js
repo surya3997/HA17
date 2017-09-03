@@ -41,7 +41,7 @@ directoryLs.push('bin\tetc\troot\tNetwork\tOS\tHack-a-Venture.log');
 directoryLs.push('hello.txt\tNetwork.py\tNetwork.log');
 directoryLs.push('hello.txt\tOS.py\tOS.log');
 var directoryL = [];
-directoryL.push('----------\t4\troot\troot\t1240\tJan 15 08:12\tbin\n----------\t4\troot\troot\t1240\tJan 15 08:12\tetc\n----------\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tOS');
+directoryL.push('d---------\t4\troot\troot\t1240\tJan 15 08:12\tbin\nd---------\t4\troot\troot\t1240\tJan 15 08:12\tetc\nd---------\t4\troot\troot\t1240\tJan 15 08:12\troot\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tNetwork\ndr-xr-xr-x\t4\troot\troot\t1240\tJan 15 08:12\tOS');
 directoryL.push('-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\tNetwork.py');
 directoryL.push('-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\thello.txt\n-r--r-----\t4\troot\troot\t1240\tJan 15 08:12\tOS.py');
 var directoryLa = [];

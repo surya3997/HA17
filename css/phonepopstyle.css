@@ -15,6 +15,13 @@
     position: absolute;
 }
 
+#bit_coin_img {
+    height: 25%;
+    bottom: 40%;
+    left: 40%;
+    position: absolute;
+}
+
 #img2 {
     height: 12%;
     width: 7%;

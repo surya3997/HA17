@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
     <title><?php echo $this->getPageTitle(); ?></title>
     <!-- General libraries -->
     <link href="css/general/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,7 @@
 </head>
 
 <body id="login" class="loaded">
+    <?php include_once("analyticstracking.php") ?>
 <div class="container">
     <div id="wrapper">
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

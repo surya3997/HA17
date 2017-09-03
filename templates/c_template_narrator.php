@@ -8,6 +8,7 @@
 </head>
 
 <body id="narrate_page">
+    <?php include_once("analyticstracking.php") ?>
     <div id="ha_anim_slider_container">
         <div id="ha-anim-slider-leftnav"><i class="fa fa-angle-left"></i></div>
         <div id="ha-anim-slider-pages">

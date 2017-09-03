@@ -18,6 +18,7 @@ and open the template in the editor.
 </head>
 
 <body id="resend">
+    <?php include_once("analyticstracking.php") ?>
     <div class="container" style="height:90%">
         <div class="login-wrap">
             <div class="transbox">
