@@ -74,6 +74,7 @@ function OpenMap() {
         } else if (level_completed.includes(i)) {
             level_color = "#4a9e12";
             putName = 'Level Completed';
+            select = false;
         } else if (i == current_level) {
             put = lines;
             level_color = "#5f635c";
