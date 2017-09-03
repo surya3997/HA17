@@ -48,6 +48,8 @@ body {
     width: 100%;
     margin: 3px auto 0 auto;
     min-width: 300px;
+    /* left: 46%; */
+    top: 45%;
 }
 
 .leaderboard_content ul {

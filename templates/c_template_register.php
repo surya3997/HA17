@@ -19,6 +19,7 @@ and open the template in the editor.
 </head>
 
 <body id="register">
+    <?php include_once("analyticstracking.php") ?>
     <div class="container" style="height:90%">
         <div class="preload_splash" id="preload_splash">
             <div class="logo_splash">

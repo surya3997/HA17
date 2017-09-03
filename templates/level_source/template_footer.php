@@ -23,7 +23,18 @@
                         <div id="wallet" style="display:none">
                         <h1><span>REMAINING BALANCE IN YOUR CRYPTO-CURRENCY ACCOUNT</span></h1>
                             <img id="bit_coin_img" src="./res/images/bcoin.ico"></img>
-                            <div class="wallet_content"></div>
+                            <div class="wallet_content"><h1>
+                            <?php 
+                                global $user;
+                                global $db;
+                                $sql = 'SELECT `score` FROM `ha_user` WHERE `id` = '.$user->getUserId();
+                                $query = $db->query($sql);
+                                $row = $db->result($query);
+                                if ($row->score != NULL)
+                                    echo $row->score;
+                                else
+                                    echo '0';
+                            ?></h1></div>
                         </div>
 
                         <div id="chat" style="display:none">
