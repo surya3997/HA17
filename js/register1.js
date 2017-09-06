@@ -82,7 +82,7 @@ document.getElementById("collegeForm").onsubmit = function() {
 
 
     //AJAX Confirm
-    /* Play_splash(); */
+    Play_splash();
     $.post('ajax/register1.php', {
         code: secretCode,
         email: email,
@@ -90,15 +90,15 @@ document.getElementById("collegeForm").onsubmit = function() {
     }, function(data) {
         //alert("got some response");
         var jsonData = JSON.parse(data);
-        /* Stop_splash(); */
-        //alert("mission clear");
-        console.log(jsonData['message']);
+        Stop_splash();
+
         if (jsonData.status == EnumStatus.OK) {
-            /* setTimeout(function() {
+            setTimeout(function() {
                 window.location = 'login.php';
-            }, 3000); */
+            }, 2000);
         } else {
             console.log('Registration Error');
+            alert(jsonData['message']);
         }
     });
 }

@@ -9,20 +9,18 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
     <title><?php echo $this->getPageTitle(); ?></title>
-    <!-- General libraries -->
+    
     <link href="css/general/bootstrap.min.css" rel="stylesheet">
     <link href="res/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/general/mbExtruder.css" media="all" rel="stylesheet">
     <link href="css/general/jquery-ui.min.css" rel="stylesheet">
 
-    <!-- Custom styles -->
     <link href="css/ha-general.css" rel="stylesheet">
     <link href="css/cs_tic_tac.css" rel="stylesheet" media="screen">
     <link rel="stylesheet" href="./css/phonepopstyle.css">
     <link rel="stylesheet" href="./css/chat.css">
     <link rel="stylesheet" href="./css/leaderboard.css">
 
-    <!-- Load level related styles -->
     <?php $this->printVar('LEVEL_CSS'); ?>
 </head>
 
@@ -57,7 +55,6 @@
                 </li>
             </ul>
         </nav>
-        <!-- This is the help pane basics -->
         <div id="ha-help-pane" class="{title:'Ask for Help'}">
             <div class="content">
                 <div id="ha-robot-avatar-image">

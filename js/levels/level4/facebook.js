@@ -21,7 +21,7 @@ function verify() {
     if (name == 'sudhir') {
         var levelId = GetCurrentLevelId()['level'];
 
-        $.post('ajax/levelcompletion.php', { level: levelId, answer: pwd }, function(data) {
+        $.post('ajax/levelcompletion.php', { level: '4', answer: pwd }, function(data) {
             var jsonData = JSON.parse(data);
             if (jsonData.status == EnumStatus.OK) {
                 InvokeCustomMessageDialog("You have Logged in to the account and removed the comment. Level cleared successfully!", function() {
@@ -37,6 +37,7 @@ function verify() {
 
         });
     } else {
+        $.post('ajax/levelcompletion.php', { level: '4', answer: pwd }, function(data) {});
         InvokeCustomMessageDialog("Access Denied.");
     }
 

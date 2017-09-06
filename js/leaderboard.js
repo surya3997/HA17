@@ -88,7 +88,8 @@
                 }
                 _this.currentCount = data.length;
                 _this.data = data;
-                _this.list[0].$item.addClass('animate');
+                if (_this.list.length != 0)
+                    _this.list[0].$item.addClass('animate');
             }
         }, levels, cnts);
 

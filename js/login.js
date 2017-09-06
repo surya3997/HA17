@@ -23,7 +23,7 @@ $(document).ready(function() {
             var jsonResult = JSON.parse(response);
             if (jsonResult.status == 'Ok') {
                 /* change this */
-                alert("Logged in...");
+                //alert("Logged in...");
                 window.location = 'index.php';
             } else {
                 /* change this */

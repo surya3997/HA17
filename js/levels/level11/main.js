@@ -155,43 +155,11 @@ jQuery(document).ready(function($) {
                                 monthVal = time1.getMonth() - time.getMonth();
                                 yearVal = time1.getYear() - time.getYear();
 
-                                var levelId = GetCurrentLevelId()['level'];
-                                var answer = 'a';
-                                $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
-                                    var jsonData = JSON.parse(data);
-                                    if (jsonData.status == EnumStatus.OK) {
-                                        InvokeCustomMessageDialog("You have cleared the level.", function() {
-                                            window.location = 'index.php';
-                                        });
-                                    } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
-                                        InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
-                                            window.location = 'index.php';
-                                        });
-                                    } else {
-                                        InvokeCustomMessageDialog("Access Denied.");
-                                    }
 
-                                });
                                 hrsVal = time1.getHours() - time.getHours();
                                 minVal = time1.getMinutes() - time.getMinutes();
                                 secVal = time1.getSeconds() - time.getSeconds();
-                                var levelId = GetCurrentLevelId()['level'];
-                                var answer = 'a';
-                                $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
-                                    var jsonData = JSON.parse(data);
-                                    if (jsonData.status == EnumStatus.OK) {
-                                        InvokeCustomMessageDialog("You have cleared the level.", function() {
-                                            window.location = 'index.php';
-                                        });
-                                    } else if (jsonData.status == EnumStatus.LEVEL_DONE) {
-                                        InvokeCustomMessageDialog("Success. But you have already cleared this level.", function() {
-                                            window.location = 'index.php';
-                                        });
-                                    } else {
-                                        InvokeCustomMessageDialog("Access Denied.");
-                                    }
 
-                                });
                                 if (flag == 1) {
                                     monthVal = monthVal + 1;
                                     dateVal = dateVal - 1;
@@ -232,8 +200,8 @@ jQuery(document).ready(function($) {
                     });
 
                     var levelId = GetCurrentLevelId()['level'];
-                    var answer = 'a';
-                    $.post('ajax/levelcompletion.php', { level: levelId, answer: answer }, function(data) {
+                    // var answer = 'a';
+                    $.post('ajax/levelcompletion.php', { level: levelId, answer: command }, function(data) {
                         var jsonData = JSON.parse(data);
                         if (jsonData.status == EnumStatus.OK) {
                             InvokeCustomMessageDialog("You have cleared the level.", function() {
@@ -250,7 +218,6 @@ jQuery(document).ready(function($) {
                     });
                 } else {
                     term.echo('Wrong Password Try AGAIN!!!');
-                    //log[i] += ('\nPassword:' + command + ' (WRONG)');
                 }
             }, {
                 name: 'password',
@@ -261,9 +228,6 @@ jQuery(document).ready(function($) {
             currentp2 = new Date;
 
             currentp2.setMinutes(currentp2.getMinutes() + 5);
-            //alert("c2" + currentp2);
-            //alert("c" + current);
-
             time = new Date;
 
             time.setDate(time.getDate() - dateVal);

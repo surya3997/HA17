@@ -1,5 +1,8 @@
 body {
-    background: #444;
+    background-image: url("../res/images/miss_me2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
 }
 
 #leaderboard {

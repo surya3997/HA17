@@ -3,6 +3,7 @@
     
     if($session->isLoggedIn()) {
         $jsonMessage['status'] = 'Session_Exists';
+        $jsonMessage['message'] = 'Session_Already_Exists';
         die(json_encode($jsonMessage));
     }
     
@@ -36,11 +37,11 @@
     
     if ($err) {
         $jsonMessage['status'] = "Failed";
-        $jsonMessage['message'] = 'API error';
+        $jsonMessage['message'] = 'Try after some time';
         die(json_encode($jsonMessage));
     } elseif ($response === 'null') {
         $jsonMessage['status'] = "Failed";
-        $jsonMessage['message'] = 'Wrong Code';
+        $jsonMessage['message'] = 'First register at PSG Login website';
         die(json_encode($jsonMessage));
     } else {
         $values = json_decode($response);
@@ -71,7 +72,7 @@
                 $clgName = "PSG";
                 $sql = 'INSERT INTO '.DBT_USER.'(`name`, `pass`, `type`, `email`, `lname`, `code`, `activation_link`, `course`, `contact`, `year_join`, `seen_announ`)
                 VALUES '."('{$firstName}', '{$passwordHash}', '{$isAlumnus}', '{$actualEmail}', '{$clgName}', '{$code}', '{$activationLink}', '{$rollno}', '{$phone}', '', '0')";
-            } elseif ($isAlumnus == '0'){
+            } else{
                 $clgName = clean($values->cn);
                 $sql = 'INSERT INTO '.DBT_USER.'(`name`, `pass`, `type`, `email`, `lname`, `code`, `activation_link`, `course`, `contact`, `year_join`, `seen_announ`)
                 VALUES '."('{$firstName}', '{$passwordHash}', '{$isAlumnus}', '{$actualEmail}', '{$clgName}', '{$code}', '{$activationLink}', '{$rollno}', '{$phone}', '', '0')";
@@ -86,7 +87,7 @@
             }
 
             
-            $sql = 'SELECT `id` FROM '.DBT_USER.' WHERE LOWER(`email`) = LOWER(\''.$email.'\')';
+            $sql = 'SELECT `id` FROM '.DBT_USER.' WHERE LOWER(`email`) = LOWER(\''.$typedEmail.'\')';
             $query = $db->query($sql);
             $result = $db->result($query);
             $user_id = $result->id;

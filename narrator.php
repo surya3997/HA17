@@ -13,9 +13,11 @@
     $level = clean($_GET['level']);
     
     //Check if the level is open.
-    /* if(!$levelMgr->IsLevelOpen($level)) {
+    if(!$levelMgr->IsLevelOpen($level)) {
         header('Location:index.php');
-    } */
+    }
+
+    
 
     //Clear this level's anim_viewed flag. 
     $sql = 'UPDATE '.DBT_USER_LEVELS.'

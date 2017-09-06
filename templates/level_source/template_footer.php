@@ -109,17 +109,13 @@
             <i id="pop_mobile" class="button fa fa-phone" href='#'></i>
         </div>
     </div>
-    <!-- #content-wrapper -->
     </div>
-    <!-- #wrapper -->
     </div>
 
-    <!-- jQuery -->
+ 
     <script src="js/general/jquery.js"></script>
     <script>
-        /**
-         * Place the loader div dead center
-         */
+        
         var leftOffset = ($(window).width() - 200) / 2;
         var topOffset = ($(window).height() - 200) / 2;
         $('#loader').css({
@@ -141,18 +137,16 @@
         });
     </script>
 
-    <!-- Bootstrap Core JavaScript -->
+    
     <script src="js/general/bootstrap.min.js"></script>
-    <!-- JQuery UI -->
+    
     <script src="js/general/jquery-ui.min.js"></script>
     <script src="js/general/jquery.countdown.min.js"></script>
-    <!-- For the custom Enumerations -->
+    
     <script src="js/enums.js"></script>
-    <!-- mbExtruder for the help Slider -->
+    
     <script src="js/general/jquery.mb.flipText.js"></script>
     <script src="js/general/mbExtruder.js"></script>
-
-    <!-- Custom JavaScript -->
     
     <script src="js/ammap.js"></script>
     <script src="js/worldLow.js"></script>
@@ -164,8 +158,6 @@
     <script src="js/ha_basetemplate.js"></script>
     <script src="./js/chat.js"></script>
     
-
-    <!-- Level Specific JS file. Add dynamically. -->
     <?php $this->printVar('LEVEL_JS'); ?>
 </body>
 

@@ -97,17 +97,52 @@ class LevelCompletionManager {
         $userId = $user->getUserId();
         $cTime = time();
         //First get the previous attempt number.
-        $sql = 'SELECT MAX(`attempt_number`) as max_attempt_number
+
+        $sql = 'select * from ha_level_attempts WHERE level_id = '.$levelId.' and user_id = '.$userId;
+        $query = $db->query($sql);
+
+        if($db->numRows($query) <= 0) {
+            $sql  = 'INSERT INTO `ha_level_attempts` (`user_id`, `level_id`, `attempt_number`, `solution`, `attempt_time`) VALUES (\''.$userId.'\', \''.$levelId.'\', \'1\', NULL, NULL)';
+            $query = $db->query($sql);
+            $db->freeResults($query);
+            
+            return "New log created";
+        } else {
+            $sql = 'SELECT `attempt_number`
                     FROM '.DBT_LEVEL_ATTEMPTS.'
                     WHERE `level_id` = \''.$levelId.'\'
-                        AND `user_id` = \''.$userId.'\'';
-        $query = $db->query($sql);
-        $result = $db->result($query);
-        $result = $result->max_attempt_number + 1;
+                    AND `user_id` = \''.$userId.'\'';
+
+            $query = $db->query($sql);
+            $result = $db->result($query);
+            $result = $result->attempt_number + 1;
+
+            $db->freeResults($query);
+            $sql  = 'UPDATE `ha_level_attempts` 
+                        SET `attempt_number` = \''.$result.'\' 
+                        WHERE `ha_level_attempts`.`user_id` = '.$userId.' AND 
+                                `ha_level_attempts`.`level_id` = '.$levelId.' ';
+                        
+            $db->query($sql);
+            $db->freeResults($query);
+            
+            return "Log updated";
+        }
+
+        
+       /*  $query = $db->query($sql);
+        $result = '';
+        if($db->numRows($query) <= 0) {
+                $result = '1';
+        }
+        else {
+                
+        }
         $db->freeResults($query);
         $sql = 'INSERT INTO '.DBT_LEVEL_ATTEMPTS.'(`user_id`, `level_id`, `attempt_number`, `solution`, `attempt_time`)
                     VALUES '."('{$userId}', '{$levelId}', '{$result}', '{$solution}', '{$cTime}')";
-        $db->query($sql);
+        $db->query($sql); */
+        return "Some problem";
     }
 
     /**
