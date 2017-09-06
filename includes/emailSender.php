@@ -2,7 +2,7 @@
 include_once "phpmailer_folder/PHPMailer.php";
 include_once "phpmailer_folder/SMTP.php";
 
-use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer/PHPMailer/PHPMailer;
 
 class EmailSender {
     private $mToId;

@@ -9,20 +9,24 @@ function closeChat(option) {
     back_flag = 0;
 }
 
+$.post('ajax/getResponses.php', {}, function(resp) {
+    var query_responses = JSON.parse(resp);
+    //console.log(data);
+        for (var i = 0; i < query_responses.query.length; i++) {
+            $("<div class='msg_b'>SOMEONE ASKED : " + query_responses.query[i] + "</div>").insertBefore('.msg_insert');
+            $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+            $("<div class='msg_a'>OUR RESPONSE : " + query_responses.response[i] + "</div>").insertBefore('.msg_insert');
+            $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
+        }
+});
+
 function openHelpDesk() {
     $('.msg_wrap').show();
     $('.msg_box').show();
     back_flag = 1;
-    $.post('ajax/getResponses.php', {}, function(resp) {
-        var data = JSON.parse(resp);
-        //console.log(data);
-        for (var i = 0; i < data.query.length; i++) {
-            $("<div class='msg_b'>SOMEONE ASKED : " + data.query[i] + "</div>").insertBefore('.msg_insert');
-            $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
-            $("<div class='msg_a'>OUR RESPONSE : " + data.response[i] + "</div>").insertBefore('.msg_insert');
-            $('.msg_body').scrollTop($('.msg_body')[0].scrollHeight);
-        }
-    });
+    
+        
+   
 }
 
 function openMillionaire() {

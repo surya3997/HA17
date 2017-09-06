@@ -28,7 +28,8 @@
     } else {
         $alumniCode = clean($_POST['alumniCode']);
         /* change this */
-        if('log17alu' != strtolower($alumniCode)) {
+        echo $alumniCode;
+	if('log17alu' != strtolower($alumniCode)) {
             $jsonMessage['status'] = ENUM_STATUS_FAILED;
             $jsonMessage['message'] = 'Invalid Alumni Code';
             die(json_encode($jsonMessage));
@@ -73,10 +74,10 @@
     }
 
     //Send the activation mail to the user.
-    $activationCodeSafe = urlencode($activationLink);
-    $activationMailBody = "Hi {$firstName},<br />Thank you for registering in Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"localhost/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
-    $activationMailSender = new EmailSender($email, $activationMailBody);
-    $activationMailSender->SendMail();
+    $activationCode = $activationLink;
+    //$activationMailBody = "Hi {$firstName},<br />Thank you for registering in Hack-a-Venture 2017. <br />To confirm your account click on the following link.<br /> <a href=\"http://www.hackaventure.ga/HA17/email_activation.php?email={$email}&verification_code={$activationCodeSafe}\">Email Verification</a>";
+    //$activationMailSender = new EmailSender($email, $activationMailBody);
+    //$activationMailSender->SendMail();
 
     $sql = 'SELECT `id` FROM '.DBT_USER.' WHERE LOWER(`email`) = LOWER(\''.$email.'\')';
     $query = $db->query($sql);
@@ -86,7 +87,28 @@
     //Create all the required data.
     //LevelCompletionManager::CreateInitSettings($user_id);
 
-    //Send the Registration confirmation Mail. 
-    $jsonMessage['status'] = ENUM_STATUS_OK;
-    echo json_encode($jsonMessage);
+
+    $sql = 'SELECT `id` 
+            FROM '.DBT_USER.'
+            WHERE LOWER(`email`) = \''.$email.'\'
+                AND `activation_link` = \''.$activationCode.'\'';
+    $query = $db->query($sql);
+    if($db->numRows($query) == 1) {
+        //We have a valid user.
+        $result = $db->result($query); 
+        $sql = 'UPDATE '.DBT_USER.'
+                SET `activation_link` = \'\'
+                WHERE `id` = \''.$result->id.'\'';
+        $query = $db->query($sql);
+        LevelCompletionManager::CreateInitSettings($result->id);
+        //Log the User in. 
+        $sql = "UPDATE ".DBT_SESSION." SET `login_stat` = '1' , `user_id` = '{$result->id}' WHERE `id` = '{$_SESSION['id']}'";
+        $query = $db->query($sql);
+        //Send the Registration confirmation Mail. 
+    	$jsonMessage['status'] = ENUM_STATUS_OK;
+    	echo json_encode($jsonMessage);
+    } else {
+        $jsonMessage['status'] = "Fail";
+    }
+    
 ?>

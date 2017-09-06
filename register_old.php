@@ -2,10 +2,10 @@
     PageRedirect('index');
     include 'includes/config.php';
 
-    if($session->isLoggedIn()) {
+    if($session->IsLoggedIn()) {
         PageRedirect('index');
-    } 
+    }
 
     /* change this */
-    include $rootpath.'templates/c_template_resend.php';
+    include $rootpath.'templates/c_template_register.php';
 ?>

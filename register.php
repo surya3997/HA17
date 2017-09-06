@@ -6,5 +6,5 @@
     }
 
     /* change this */
-    include $rootpath.'templates/c_template_register.php';
+    include $rootpath.'templates/c_template_register1.php';
 ?>

@@ -37,7 +37,7 @@ page1Story.SetAnimations([{
             y: '-=190'
         },
         hideLocation: EnumAnimationHide.RIGHT_HIDE,
-        storyMode: "Becoming the richest man in the world doesn't seem impossible...But I need some one to deafeat my competitors!!!",
+        storyMode: "Becoming the richest man in the world doesn't seem impossible...But I need some one to defeat my competitors!!!",
         storyTeller: "Heroine"
     },
     {

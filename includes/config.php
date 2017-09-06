@@ -20,7 +20,7 @@
     include_once 'session.php';
 
 	//This is for sending mail and stuff. 
-	include_once 'emailSender.php';
+	//include_once 'emailSender.php';
 
 	//This is for handling data related to the level. 
 	include_once 'LevelCompletionManager.php';

@@ -29,8 +29,19 @@ function OpenMap() {
     current_level = parseInt(jsonData["level"]) - 1;
 
 
+
+    var put = [];
+    var implement = [];
+
+    var open_places = jsonData["open"];
+    for (var i = 0; i < open_places.length; i++) {
+        var postves = parseInt(open_places[i]) - 1
+        if (postves >= 0)
+            implement.push(postves);
+    }
+
     for (var i = 0; i < places.length; i++) {
-        if (current_level == i || level_completed.includes(i)) {
+        if (current_level == i || level_completed.includes(i) || !(implement.includes(i))) {
             continue;
         }
 
@@ -47,16 +58,6 @@ function OpenMap() {
             insert_line["arc"] = -0.85;
         }
         lines.push(insert_line);
-    }
-
-    var put = [];
-    var implement = [];
-
-    var open_places = jsonData["open"];
-    for (var i = 0; i < open_places.length; i++) {
-        var postves = parseInt(open_places[i]) - 1
-        if (postves >= 0)
-            implement.push(postves);
     }
 
     //console.log(implement);

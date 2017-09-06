@@ -71,12 +71,12 @@
             </div>
         </div>
 
-        <div id="session-expired-page-redirect" title="Session Expired">
+        <div id="session-expired-page-redirect" title="Session Expired" style="opacity:0">
             Session has expired. Please login again.
         </div>
         <div id="general-info-dialog" title="Information">
             <div id="general-info-dialog-content">
-                This is dummy information.
+                .
             </div>
         </div>
         <div id="help-pane-confirm-hint" title="Confirmation for hint acquisition">
@@ -108,7 +108,7 @@
                 <div class="dialog">
                     <div id=comm>Welcome!</div>
                     <form style="text-align:justify">
-                        <label for="letter">Difficulty:</label> <input type="radio" name="difficulty" id="Easy" value="Easy"><small>Easy</small>
+                        <label for="letter">Difficulty:</label> <br><input type="radio" name="difficulty" id="Easy" value="Easy"><small>Easy</small>
                         <input type="radio" name="difficulty" id="Medium" value="Medium"><small>Medium</small>
                         <input type="radio" name="difficulty" id="Hard" value="Hard" checked><small>Hard</small><br>
                         <label for="letter">First:</label>

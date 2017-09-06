@@ -81,6 +81,7 @@ document.getElementById("collegeForm").onsubmit = function() {
         return false;
     }
 
+
     //AJAX Confirm
     Play_splash();
     $.post('ajax/register.php', {
@@ -95,7 +96,7 @@ document.getElementById("collegeForm").onsubmit = function() {
         var jsonData = JSON.parse(data);
         Stop_splash();
         if (jsonData.status == EnumStatus.OK) {
-            alert('Email Verification required. Please check your mail (also SPAM folders) for activation link.', 'Registration Successful');
+            //alert('Email Verification required. Please check your mail (also SPAM folders) for activation link.', 'Registration Successful');
             setTimeout(function() {
                 window.location = 'login.php';
             }, 3000);
@@ -155,7 +156,10 @@ document.getElementById('alumniForm').onsubmit = function() {
         Stop_splash();
         var jsonData = JSON.parse(data);
         if (jsonData.status == EnumStatus.OK) {
-            alert('Email Verification required. Please check your Inbox and spam folders');
+            //alert('Email Verification required. Please check your Inbox and spam folders');
+            setTimeout(function() {
+                window.location = 'login.php';
+            }, 3000);
         } else {
             alert('Registration Error');
         }

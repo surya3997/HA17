@@ -39,7 +39,7 @@
                     <div class="full col-sm-9">
                         <div class="row">
                             <div class="col-sm-10" style="margin-left:7%">
-                                <B style="color:#357ebd">RG Prasad</B> updated his profile picture
+                                <B style="color:#357ebd">Steve</B> updated his profile picture
                                 <br>
                                 <p style="color:gray">26 mins ago</p>
                                 <div class="panel panel-default">
@@ -53,7 +53,7 @@
                                         <p><textarea value="Remove the Comment" readonly style="background-color: #9cb4d8;width: 93%;margin-left: 0%;border-radius: 4%;/* height: 10%; */">f**k*** B****</textarea></p>
 
                                         <p>
-                                            <img src="./res/images/levels/level4/user.png" height="28px" width="28px"> RG Prasad
+                                            <img src="./res/images/levels/level4/user.png" height="28px" width="28px"> Steve
                                             <p></p>
                                             <p><textarea value="Remove the Comment" readonly style="background-color: #9cb4d8;width: 93%;margin-left: 0%;border-radius: 4%;/* height: 10%; */">Hey Idiot! Remove The Comment</textarea></p>
                                         </p>
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Sudhir's password is  <?php $this->printVar('level_question'); ?>. -->
+                <!-- sudhir's password is  <?php $this->printVar('level_question'); ?>. -->
                 <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">

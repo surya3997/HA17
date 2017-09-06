@@ -40,9 +40,10 @@ and open the template in the editor.
                             <label>Don't have an account ?</label>
                             <span><a href="register.php">Register here</a></span>
                             <br>
-                            <br>
+                            <br><!--
                             <label>Didn't get an activation email ?</label>
                             <a href="resend.php">Click here</a>
+                            -->
                         </div>
                         <br><br>
                     </div>

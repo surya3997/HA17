@@ -8,8 +8,8 @@ class DB    {
 
     /* Must be changed for requirement */
     private $dbHost = 'localhost';
-    private $dbUser = 'ha';
-    private $dbPass = 'ha';
+    private $dbUser = 'root';
+    private $dbPass = 'stackoverflow';
     private $dbName = 'ha17_checker';
   
     //This is the constructor
@@ -54,7 +54,7 @@ class DB    {
         if($query = mysqli_query($this->con, $sqlQuery))    {
             return $query;
         } else {
-             die('SQL Error.'); //.$sqlQuery
+             die('SQL Error.');//.$sqlQuery);
         }
     }
     
