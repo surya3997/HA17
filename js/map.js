@@ -189,13 +189,19 @@ function OpenPhone() {
     $('.wrap, #pop_mobile').toggleClass('active');
 }
 
+function OpenPhone() {
+    phone=$('.wrap, #pop_mobile');
+    if(phone.hasClass('active')){
+        phone.removeClass('active');
+        document.querySelector('body').onkeydown=null;
+    }
+    else{
+        phone.addClass('active');
+        document.querySelector('body').onkeydown=function(e){if(e.keyCode == 27){OpenPhone();}};
+    }
+}
+
 $('#pop_mobile')
     .on('click', function() {
         OpenPhone();
-    })
-    .keypress(
-        function(e) {
-            if (e.keyCode == 27) {
-                OpenPhone();
-            }
-        });
+    });
