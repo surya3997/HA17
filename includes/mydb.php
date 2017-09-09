@@ -8,8 +8,8 @@ class DB    {
 
     /* Must be changed for requirement */
     private $dbHost = 'localhost';
-    private $dbUser = 'root';
-    private $dbPass = 'stackoverflow';
+    private $dbUser = 'ha';
+    private $dbPass = 'ha';
     private $dbName = 'ha17_checker';
   
     //This is the constructor
