@@ -81,13 +81,11 @@ class LevelCompletionManager {
         $sql = 'INSERT INTO '.DBT_USER_LEVELS.'(`user_id`, `level_id`, `anim_viewed`)
                 VALUES '."('{$userId}', '12', '1')";
         $db->query($sql);
-        $db->freeResults($query);
 
         //Add the time in level thing.
         $sql = 'INSERT INTO '.DBT_LEVEL_USER_DATA.'(`level_id`, `user_id`, `data_key`, `data_value`)
                 VALUES '."('1', '{$userId}', 'time_spent', '0')";
         $db->query($sql);
-        $db->freeResults($query);
     }
 
     /**

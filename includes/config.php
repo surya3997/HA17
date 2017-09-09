@@ -1,4 +1,6 @@
 <?php
+
+
 /*
  * This is the main configuration file that is included in all the pages.
  */
@@ -12,7 +14,7 @@
 
 	//Now we include all the table names constants
 	include_once 'db_table.php';
-
+//echo "test";
 	//This holds all the general functions.
     include_once 'common_functions.php';
 
@@ -24,14 +26,14 @@
 
 	//This is for handling data related to the level. 
 	include_once 'LevelCompletionManager.php';
-
+//echo "test";
 	//Now we include the template.
 	include_once 'template.php';
 	
 	//This is for the levels
 	include_once 'levelmanager.php';
-
-	$rootpath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
+//echo "test";
+	$rootpath = $_SERVER['DOCUMENT_ROOT'].'/';
 
 	$session = new Session();
 
@@ -41,7 +43,7 @@
 	$user = new User(); 
 	$levelMgr = new LevelManager();
 	$template = new Template();
-	
+//echo "test";	
 	//This is for handling data related to the level. 
 	include_once 'LevelDataManager.php';
 ?>

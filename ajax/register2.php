@@ -15,48 +15,34 @@
     $password = clean($_POST['password']);
     $passwordHash = sha1($password);
 
-$curl = curl_init();
 
-    curl_setopt_array($curl, array(
-        CURLOPT_URL => "https://psglogin.in/php/details.php",
-        CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_ENCODING => "",
-        CURLOPT_MAXREDIRS => 10,
-        CURLOPT_TIMEOUT => 30,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-        CURLOPT_CUSTOMREQUEST => "POST",
-        CURLOPT_POSTFIELDS => "------WebKitFormBoundary7MA4YWxkTrZu0gW\r\nContent-Disposition: form-data; name=\"code\"\r\n\r\n".$code."\r\n------WebKitFormBoundary7MA4YWxkTrZu0gW--",
-        CURLOPT_HTTPHEADER => array(
-            "cache-control: no-cache",
-            "content-type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW",
-            "postman-token: f0baf6d4-7ea9-9c8a-cea2-9361da8dfdb3"
-        ),
-    ));
-    
-    $response = curl_exec($curl);
-    $err = curl_error($curl);
-    
-    curl_close($curl);
 
-     
-     if ($err) {
-         $jsonMessage['status'] = "Failed";
-         $jsonMessage['message'] = 'Try after some time';
-         die(json_encode($jsonMessage));
-     } elseif ($response === 'null') {
-         $jsonMessage['status'] = "Failed";
-         $jsonMessage['message'] = 'First register at PSG Login website';
-         die(json_encode($jsonMessage));
-     } else {
-         $values = json_decode($response);
-         //echo $values;
-         $isAlumnus =  clean($values->alumnus);
-         $actualEmail = clean($values->email);
-         $firstName = clean($values->name);
-         $rollno = clean($values->rn);
-         $phone = clean($values->phone);
-         $activationLink = '';
-         if ($typedEmail == $actualEmail) {
+    // $curl = curl_init();
+    // curl_setopt($curl, CURLOPT_URL, "https://psglogin.in/php/details.php");
+    // curl_setopt($curl, CURLOPT_POST, 1);
+    // curl_setopt($curl, CURLOPT_POSTFIELDS, "code=".$code);
+    // $response = curl_exec($curl);
+    // $err = curl_error($curl);
+    // curl_close($curl);
+
+    // if ($err) {
+    //     $jsonMessage['status'] = "Failed";
+    //     $jsonMessage['message'] = 'Try after some time';
+    //     die(json_encode($jsonMessage));
+    // } elseif ($response === 'null') {
+    //     $jsonMessage['status'] = "Failed";
+    //     $jsonMessage['message'] = 'First register at PSG Login website';
+    //     die(json_encode($jsonMessage));
+    // } else {
+    //     $values = json_decode($response);
+    //     echo $values;
+    //     $isAlumnus =  clean($values->alumnus);
+    //     $actualEmail = clean($values->email);
+    //     $firstName = clean($values->name);
+    //     $rollno = clean($values->rn);
+    //     $phone = clean($values->phone);
+    //     $activationLink = '';
+    //     if ($typedEmail == $actualEmail) {
             // valid user
             $sql = 'SELECT `email`
                     FROM '.DBT_USER.'
@@ -99,18 +85,18 @@ $curl = curl_init();
 
             $sql = "UPDATE ".DBT_SESSION." SET `login_stat` = '1' , `user_id` = '{$result->id}' WHERE `id` = '{$_SESSION['id']}'";
             $query = $db->query($sql);
-	    $db->freeResults($query);
+	    //$db->freeResults($query);
 
             $jsonMessage['status'] = "Ok";
             $jsonMessage['message'] = "Successfully registered.";
             die(json_encode($jsonMessage));
-         } else {
-             // random person
-             $jsonMessage['status'] = "Failed";
-             $jsonMessage['message'] = 'Email ID doesnt match';
-             die(json_encode($jsonMessage));
-         }
-     }
+    //     } else {
+    //         // random person
+    //         $jsonMessage['status'] = "Failed";
+    //         $jsonMessage['message'] = 'Email ID doesnt match';
+    //         die(json_encode($jsonMessage));
+    //     }
+    // }
 
     $jsonMessage['status'] = "unusual";
     $jsonMessage['message'] = "Less chance for this to occur!";

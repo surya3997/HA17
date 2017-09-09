@@ -93,7 +93,7 @@ document.getElementById("collegeForm").onsubmit = function(event) {
         var jsonData = JSON.parse(data);
         Stop_splash();
 	console.log(jsonData);
-        if (jsonData.status == 'Ok') {
+        if (jsonData.status == EnumStatus.OK) {
             setTimeout(function() {
                 window.location = 'login.php';
             }, 2000);
@@ -101,7 +101,7 @@ document.getElementById("collegeForm").onsubmit = function(event) {
             console.log('Registration Error');
             alert(jsonData.message);
 	}
-    });
+    }
 }
 
 $("#noScroller").css("overflow-y", "hidden");

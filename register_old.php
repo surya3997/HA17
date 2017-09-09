@@ -1,5 +1,5 @@
 <?php
-    PageRedirect('index');
+    //PageRedirect('index');
     include 'includes/config.php';
 
     if($session->IsLoggedIn()) {

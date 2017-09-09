@@ -19,23 +19,13 @@ and open the template in the editor.
 </head>
 
 <body id="register">
-    <?php include_once("analyticstracking.php") ?>
-    <div class="container" style="height:90%">
-        <div class="preload_splash" id="preload_splash">
-            <div class="logo_splash">
-                <span style="color: darkturquoise;">Content </span>Loading
-            </div>
-            <div class="loader-frame_splash">
-                <div class="loader1_splash" id="loader1_splash"></div>
-                <div class="loader2_splash" id="loader2_splash"></div>
-            </div>
-        </div>
         <div class="reg_wrap">
             <div class="transbox">
                 <div class="reg-html">
-                    <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label id="details_label" for="tab-1" class="tab">DETAILS</label>
-                    <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"></label>
                     <div class="reg-form">
+                        <center>
+                            <h1 style="color:white">WELCOME</h1>
+                        </center><br>
                         <div class="reg-college">
                             <div class="form-group style-1" id="noScroller">
                                 <form id="collegeForm">

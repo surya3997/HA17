@@ -6,5 +6,5 @@
     } 
 
     /* change this */
-    include $rootpath.'templates/c_template_login.php';
+    $template->loadCustomPage('login');
 ?>

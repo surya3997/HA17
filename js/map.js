@@ -186,10 +186,6 @@ function OpenMap() {
 }
 
 function OpenPhone() {
-    $('.wrap, #pop_mobile').toggleClass('active');
-}
-
-function OpenPhone() {
     phone=$('.wrap, #pop_mobile');
     if(phone.hasClass('active')){
         phone.removeClass('active');
