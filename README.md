@@ -1,5 +1,5 @@
-# HackArena 2017
-    Repository for HackArena 2017 developers.
+# Hack-A-Venture 2017
+    Repository for Hack-A-Venture 2017 developers.
 	
 	
 ## Pre-requisites
