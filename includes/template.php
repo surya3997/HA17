@@ -13,7 +13,7 @@ class Template {
     private $levelId;
     //This is the constructor of template class. Nothing much to do.
     function __construct() {
-        $this->rootPath = $_SERVER['DOCUMENT_ROOT'].'/HA17/';
+        $this->rootPath = $_SERVER['DOCUMENT_ROOT'].'/';
         $this->pageName = '';
     }
 
