@@ -38,5 +38,6 @@
 
 
 ## Installation
-Place this folder in htdocs in xampp installation folder.
-Import sql/ha_final.sql
+	Place this folder in htdocs in xampp installation folder.
+	Create mysql user with username and password as 'ha'.
+	Import sql/ha_final.sql with database name 'ha'.
