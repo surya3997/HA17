@@ -10,7 +10,7 @@ class DB    {
     private $dbHost = 'localhost';
     private $dbUser = 'ha';
     private $dbPass = 'ha';
-    private $dbName = 'ha17_checker';
+    private $dbName = 'ha';
   
     //This is the constructor
     function __construct() {
