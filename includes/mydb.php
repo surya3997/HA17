@@ -8,9 +8,9 @@ class DB    {
 
     /* Must be changed for requirement */
     private $dbHost = 'localhost';
-    private $dbUser = 'root';
-    private $dbPass = 'stackoverflow';
-    private $dbName = 'ha17_checker';
+    private $dbUser = 'ha';
+    private $dbPass = 'ha';
+    private $dbName = 'ha';
   
     //This is the constructor
     function __construct() {

@@ -51,13 +51,13 @@ class EmailSender {
         $mail->SMTPAuth = true;
 
         //Username to use for SMTP authentication - use full email address for gmail
-        $mail->Username = "hackaventure2k17@gmail.com";
+        $mail->Username = "";
 
         //Password to use for SMTP authentication
-        $mail->Password = "HackMeIfYouCan";
+        $mail->Password = "";
 
         //Set who the message is to be sent from
-        $mail->setFrom('hackaventure2k17@gmail.com', 'PSG Login 2017 HA - Admin');
+        $mail->setFrom('', 'PSG Login 2017 HA - Admin');
 
         //Set who the message is to be sent to
         $mail->addAddress($email);
