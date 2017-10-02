@@ -1,0 +1,144 @@
+body {
+    margin: 0px;
+    color: #6a6f8c;
+    /* background: url(city3.jpg) no-repeat; */
+    background-size: cover;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+#layout {
+    height: 90%;
+    position: relative;
+    width: 90%;
+    background-color: gray;
+}
+
+#compimg1 {
+    margin-right: 41px;
+    height: 105px;
+    padding: 2%;
+}
+
+#compimg2 {
+    height: 105px;
+    padding: 2%;
+}
+
+#box {
+    background-color: #222;
+    opacity: 1;
+}
+
+#textarea1 {
+    height: 233px;
+    width: 100%;
+    background-color: rgba(20, 11, 20, 0.83);
+    color: red;
+}
+
+#textarea2 {
+    height: 233px;
+    width: 100%;
+    background-color: rgba(20, 11, 20, 0.83);
+    color: red;
+}
+
+#modalHead {
+    background-color: black;
+}
+
+img {
+    height: 25px;
+}
+
+textarea {
+    resize: none;
+}
+
+#closeimg {
+    float: center;
+}
+
+
+.preload_splash {
+    width: 80%;
+    height: 80%;
+    margin-top: 5%;
+    margin-left: 10%;
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: none;
+}
+
+.logo_splash {
+    width: 500px;
+    height: 70px;
+    margin: 150px auto 50px auto;
+    font-size: 50px;
+    text-shadow: -1px 2px 2px #000;
+    text-align: 90%;
+    color: azure;
+}
+
+.loader-frame_splash {
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    position: relative;
+}
+
+.loader1_splash,
+.loader2_splash {
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 50%;
+}
+
+.loader1_splash {
+    width: 70px;
+    height: 70px;
+    border-top: 5px solid azure;
+    border-bottom: 5px solid azure;
+    animation: clockwisespin 2s linear 3;
+}
+
+.loader2_splash {
+    width: 60px;
+    height: 60px;
+    border-left: 5px solid darkturquoise;
+    border-right: 5px solid darkturquoise;
+    top: 5px;
+    left: 5px;
+    animation: anticlockwisespin 2s linear 3;
+}
+
+@keyframes clockwisespin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes anticlockwisespin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+

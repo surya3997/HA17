@@ -1,0 +1,2 @@
+User-agent: * 
+Disallow: russia_2.txt

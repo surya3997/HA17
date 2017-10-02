@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    color: #6a6f8c;
+    background-color: black;
+    background: url(../../../res/images/levels/level2/background_lock_screen.jpg) no-repeat 100% 100%;
+    background-size: 100% 100%;
+    background-position-x: center;
+    background-position-y: center;
+    width: 100%;
+    height: 100%;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+.slide {
+          width:100%;
+          height:100%;
+          position:absolute;
+          right:-100%;
+          top:0;
+          background:#000;
+        }
+        
+        #close {
+          position:absolute;
+          right:10px;
+          top:10px;
+          z-index:10;
+          display:none;
+        }
+        
+        #right-content {
+          position:absolute;
+          right:0;
+          top:0;
+          overflow:hidden;
+          width:200px;
+          height:100%;
+        }
+
+#user_icon {
+    height: 50px;
+}
+
+.login-wrap {
+    width: 100%;
+    /* margin: auto; */
+    max-width: 40%;
+    margin-top: 14%;
+    margin-bottom: 0%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 360px;
+    /* display: none; */
+    position: relative;
+}
+
+.login-form {
+    height: 100%;
+    position: relative;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    overflow-y: hidden;
+}
+
+.login-html {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 7% 10% 7% 10%;
+    background: black;
+}
+
+div.transbox {
+    margin: 30px;
+    /* background-color: #ffffff;
+    border: 1px solid black;*/
+    opacity: 0.75; 
+    filter: alpha(opacity=20);
+}
+
+div.transbox p {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
+
+div.login-form label {
+    color: antiquewhite;
+}
+
+div.redirections a {
+    color: #3d74ff;
+}
+
+input.transparent-input {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+html {
+    height: 100%;
+}
+
+.form-rounded,
+.btn {
+    border-radius: 3rem;
+}
+
+.game_btn a {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    font-size: 16px;
+    color: white;
+}
+
+input.form-control {
+    height: 50px;
+}

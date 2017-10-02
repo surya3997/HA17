@@ -9,12 +9,12 @@ function OpenMap() {
 
     var planeSVG = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
 
-    var places = ["india", "china", "russia", "malaysia", "russiakomi", "southafrica", "argentina", "brazil", "california", "alabama", "uk", "australia"];
-    var place_names = ["India", "China", "Russia", "Malaysia", "Russia Komi-republic", "South Africa", "Argentina", "Brazil", "California", "Alabama", "UK", "Australia"];
-    var lat = [11, 36.79, 63.66, 3.27, 64.23, -27.54, -44.0, -7.25, 39.72, 34.68, 51.42, -28.03];
-    var long = [77, 111, 116.53, 102.8, 52.52, 24.2, -70.5, -66.97, -120.412, -86.31, -1.5, 129.9];
-    var zoomlat = [11, 18.59, 33.1712, 9.1712, 21.1712, -5.0, -9.1712, 9.1712, 25.1712, 25.1712, 25.1712, -22.1712];
-    var zoomlong = [77, 111.1341, 52.1341, 50.1341, 0.1341, 37, 0.1341, 0.1341, -40.1341, 0.1341, -1.5, 130.1341];
+    var places = ["india", "china", "russia", "malaysia", "russiakomi", "southafrica", "argentina", "brazil", "california", "alabama", "uk"];
+    var place_names = ["India", "China", "Russia", "Malaysia", "Russia Komi-republic", "South Africa", "Argentina", "Brazil", "California", "Alabama", "UK"];
+    var lat = [11, 36.79, 63.66, 3.27, 64.23, -27.54, -44.0, -7.25, 39.72, 34.68, 51.42];
+    var long = [77, 111, 116.53, 102.8, 52.52, 24.2, -70.5, -66.97, -120.412, -86.31, -1.5];
+    var zoomlat = [11, 18.59, 33.1712, 9.1712, 21.1712, -5.0, -9.1712, 9.1712, 25.1712, 25.1712, 25.1712];
+    var zoomlong = [77, 111.1341, 52.1341, 50.1341, 0.1341, 37, 0.1341, 0.1341, -40.1341, 0.1341, -1.5];
     var level_completed = [];
     var current_level = 0;
     var location_targets = [];
@@ -183,10 +183,6 @@ function OpenMap() {
         if (level != 0 && event.mapObject.selectable)
             window.location = "level.php?level=" + level;
     });
-}
-
-function OpenPhone() {
-    $('.wrap, #pop_mobile').toggleClass('active');
 }
 
 function OpenPhone() {

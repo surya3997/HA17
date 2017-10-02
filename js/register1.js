@@ -60,8 +60,9 @@ function Stop_splash() {
 }
 
 
-document.getElementById("collegeForm").onsubmit = function() {
+document.getElementById("collegeForm").onsubmit = function(event) {
     var secretCode = $('#col_code').val();
+    event.preventDefault();
 
     if (!CheckEmptyFields(secretCode, '[a-zA-Z0-9]', 'Secret Code')) {
         alert("Invalid Secret code");
@@ -83,7 +84,7 @@ document.getElementById("collegeForm").onsubmit = function() {
 
     //AJAX Confirm
     Play_splash();
-    $.post('ajax/register1.php', {
+    $.post('https://hack-a-venture.psglogin.in/ajax/register1.php', {
         code: secretCode,
         email: email,
         password: password
@@ -91,15 +92,15 @@ document.getElementById("collegeForm").onsubmit = function() {
         //alert("got some response");
         var jsonData = JSON.parse(data);
         Stop_splash();
-
-        if (jsonData.status == EnumStatus.OK) {
+	console.log(jsonData);
+        if (jsonData.status == 'Ok') {
             setTimeout(function() {
                 window.location = 'login.php';
             }, 2000);
         } else {
             console.log('Registration Error');
-            alert(jsonData['message']);
-        }
+            alert(jsonData.message);
+	}
     });
 }
 

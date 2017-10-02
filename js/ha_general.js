@@ -31,8 +31,8 @@ $(document).ready(function() {
             onContentLoad: function() {}
         });
 
-        $('#endOfGameTimer').countdown("2017/09/21", function(event) {
-            var totalHours = event.offset.totalDays * 24 + event.offset.hours;
+        $('#endOfGameTimer').countdown("2017/09/22", function(event) {
+            var totalHours = event.offset.totalDays * 24 + event.offset.hours + 12;
             $(this).html('Game ends in : ' + event.strftime(totalHours + ' Hrs %M Mins %S Secs'));
         });
         /**

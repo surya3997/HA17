@@ -138,6 +138,7 @@
     </script>
 
     
+    <script src="js/general/popper.min.js"></script>
     <script src="js/general/bootstrap.min.js"></script>
     
     <script src="js/general/jquery-ui.min.js"></script>

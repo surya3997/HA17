@@ -42,7 +42,7 @@ class Template {
         $this->pageTitle = $pageTitle;
     }
 
-    //This function is used to get the page title for the template page.
+    //This function is used to get the page title for the template page. Should change for every page.
     private function getPageTitle() {
         return $this->pageTitle;
     }
@@ -87,11 +87,12 @@ class Template {
             case '1':   $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level1/l1.css">';
                         $levelJSLinks = '<script type="text/javascript" src="js/levels/level1/l1.js"></script>';
                 break;
-            case '2' :
+            case '2' : $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level2/l2.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="js/levels/level2/l2.js"></script>';
                 
                 break;
-            case '3':
-                
+            case '3': $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level3/l3.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="js/general/jQuery.js"></script>';
                 break;
             case '4':
                         $levelCSSLinks = '<link href="./css/levels/level4/facebook.css" rel="stylesheet">';
@@ -100,16 +101,28 @@ class Template {
             case '5':
                 
                 break;
-            case '6':
+            case '6': $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level6/wa.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="./js/levels/level6/level6.js"></script>';
                 
                 break;
-            case '7':
+            case '7': $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level7/l7.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="js/levels/level7/l7.js"></script>';
+                    
+                break;
+
+            case '8':
+            $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level8/l8.css">';
+            $levelJSLinks = '<script type="text/javascript" src="js/levels/level8/l8.js"></script>';
                 
                 break;
             case '9':
-                
+                        $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level9/firstLevel.css"><link rel="stylesheet" href="./css/levels/level9/hex.css">';
+                        $levelJSLinks = '<script type="text/javascript" src="./js/levels/level9/jquery-landpiece.js"></script><script type="text/javascript" src="./js/levels/level9/main_botwar_ui.js"></script><script type="text/javascript" src="./js/levels/level9/hex.js"></script>';
                 break;
             case '10':
+
+                    $levelCSSLinks = '<link rel="stylesheet" href="./css/levels/level10/l10.css">';
+                    $levelJSLinks = '<script type="text/javascript" src="js/levels/level7/l7.js"></script>';
                 
                 break;
             case '11':  $levelJSLinks = //'<script src="../js/jquery-1.7.1.min.js"></script>'.
@@ -126,7 +139,7 @@ class Template {
                 break;
         }
         
-        //Something else now. For all other pages
+        //Something else now. For all other pages this will work
         switch($this->pageName) {
             case 'index':
                 
@@ -160,3 +173,4 @@ class Template {
 }
 
 ?>
+

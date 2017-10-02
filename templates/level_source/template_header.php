@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+
+<?php
+$cookie_name = "password_of_employeeX";
+$cookie_value = "GetThrough";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+?>
 <html lang="en">
 
 <head>

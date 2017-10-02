@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
 
 <head>
-    <title>Login</title>
+    <title>Hackaventure - Login</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./res/logo/ms-icon-150x150.png">
@@ -15,6 +15,7 @@ and open the template in the editor.
     <script src="./js/general/jquery.min.js"></script>
     <script src="./js/general/bootstrap.min.js"></script>
     <link rel="stylesheet" href="./css/login.css">
+	<meta name="description" content="Hack-A-Venture, a mind-boggling online event of LOGIN 2017, is ready. Are you ready to play? A fun-filled ride begins.">
 </head>
 
 <body id="login">
